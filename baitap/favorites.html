@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorites - NetFlim</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: "Segoe UI", sans-serif;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .favorite-card img {
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .favorite-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .favorite-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      background: #fff;
+      text-align: center;
+      color: #007bff;
+      font-weight: 500;
+      border-top: 1px solid #e5e5e5;
+      padding: 15px;
+      margin-top: auto; /* 👈 giúp footer luôn ở đáy */
+    }
+
+    .btn-remove {
+      background: #ff4d4d;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      transition: background 0.2s ease;
+    }
+
+    .btn-remove:hover {
+      background: #e60000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="./flim.html">
+        <i class="bi bi-film"></i> NetFlim
+      </a>
+      <ul class="navbar-nav ms-auto">
+         <li class="nav-item"><a class="nav-link" href="./flim.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="./aboutus.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="./Movies.html">Movies</a></li>
+        <li class="nav-item"><a class="nav-link" href="./favorites.html">Favorites</a></li>
+      </ul>
+      <form class="d-flex ms-3">
+        <input class="form-control" type="search" placeholder="Search...">
+      </form>
+    </div>
+  </nav>
+
+  <!-- Favorites Section -->
+  <div class="container my-5">
+    <h2 class="text-center text-primary fw-bold mb-4">
+      <i class="bi bi-heart-fill text-danger"></i> Your Favorite Movies
+    </h2>
+
+    <div class="row" id="favoritesList">
+      <!-- Favorite 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card favorite-card">
+          <img src="img/tải xuống (2).jpg" class="card-img-top" alt="Avatar">
+          <div class="card-body text-center">
+            <h6>Avatar</h6>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button class="btn-remove">Remove</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Favorite 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card favorite-card">
+          <img src="img/tải xuống (3).jpg" class="card-img-top" alt="Titanic">
+          <div class="card-body text-center">
+            <h6>Titanic</h6>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button class="btn-remove">Remove</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Favorite 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card favorite-card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg" class="card-img-top" alt="The Godfather">
+          <div class="card-body text-center">
+            <h6>The Godfather</h6>
+            <p>⭐⭐⭐⭐⭐</p>
+            <button class="btn-remove">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div id="emptyMessage" class="text-center mt-5 d-none">
+      <h5 class="text-muted"><i class="bi bi-emoji-frown"></i> No favorite movies yet...</h5>
+      <a href="movies.html" class="btn btn-primary mt-3"><i class="bi bi-plus-circle"></i> Browse Movies</a>
+    </div>
+  </div>
+
+  <!-- Footer luôn ở đáy -->
+  <footer>
+    🎬 Blue Entertainment
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Nút Remove xóa phim khỏi danh sách
+    const removeButtons = document.querySelectorAll('.btn-remove');
+    const favorites = document.querySelectorAll('.favorite-card');
+    const emptyMsg = document.getElementById('emptyMessage');
+
+    removeButtons.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        favorites[index].classList.add('d-none');
+        const visible = document.querySelectorAll('.favorite-card:not(.d-none)');
+        if (visible.length === 0) {
+          emptyMsg.classList.remove('d-none');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
