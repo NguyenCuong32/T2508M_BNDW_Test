@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NetFilm - Movies</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS riêng cho trang Movies */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .category-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: #333;
+            display: block; /* Đảm bảo cả card là liên kết */
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-card h3 {
+            margin: 0;
+            color: #c0392b; /* Màu đỏ NetFilm */
+        }
+
+        /* Thêm hình ảnh đại diện nhỏ cho các thể loại (giả định) */
+        .category-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>NetFilm | </h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="movies.html">Movies</a>
+            <a href="favorites.html">Favorites</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Explore Movie Categories</h2>
+        <p>Browse our collection by genre, including classics and new releases:</p>
+        
+        <div class="category-grid">
+            
+            <a href="#" class="category-card">
+                <div class="category-icon">💥</div>
+                <h3>Action</h3>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="category-icon">🗺️</div>
+                <h3>Adventure</h3>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="category-icon">❤️</div>
+                <h3>Romance</h3>
+            </a>
+            
+            <a href="#" class="category-card">
+                <div class="category-icon">🧠</div>
+                <h3>Documentary</h3>
+            </a>
+            
+            <a href="#" class="category-card">
+                <div class="category-icon">⚔️</div>
+                <h3>War</h3>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="category-icon">🏀</div>
+                <h3>Sport</h3>
+            </a>
+            
+            <a href="#" class="category-card">
+                <div class="category-icon">🎶</div>
+                <h3>Musical</h3>
+            </a>
+
+            <a href="#" class="category-card">
+                <div class="category-icon">👨‍👩‍👧‍👦</div>
+                <h3>Family</h3>
+            </a>
+        </div>
+        
+        <h3 style="margin-top: 40px;">Featured Classic</h3>
+        <p>Don't forget to check out **Titanic**  and **The Godfather**</p>
+        
+    </div>
+
+    <footer>
+        <p>FPT Aptech | Building Modern Websites </p>
+        <p>&copy; 2025 Blue Entertainment | Unleash your potential</p>
+    </footer>
+
+</body>
+</html>
