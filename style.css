@@ -1,0 +1,213 @@
+/* --- phần style từ bản trước giữ nguyên --- */
+body { background-color: #fafafa; color: #333; margin: 0; font-family: "Segoe UI", sans-serif; }
+
+/* Các trang nội dung đơn giản */
+.about, .favorites {
+  padding: 40px 60px;
+  line-height: 1.7;
+}
+
+.about h2, .favorites h2 {
+  margin-bottom: 20px;
+  color: #0078ff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+  color: #333;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.logo i {
+  font-size: 1.5em;
+  color: #0078ff;
+}
+
+nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #0078ff;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-box input {
+  padding: 6px 30px 6px 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.search-box i {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  color: #555;
+}
+
+/* Main layout */
+main {
+  display: flex;
+  gap: 20px;
+  padding: 30px 60px;
+}
+
+/* Sidebar */
+.filter {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter label {
+  font-size: 0.95em;
+}
+
+/* Content */
+.content {
+  flex: 1;
+}
+
+.video-container {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.description {
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.description a {
+  color: #0078ff;
+  text-decoration: none;
+}
+
+.description a:hover {
+  text-decoration: underline;
+}
+
+/* Movie list */
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.movie-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.movie-card h4 {
+  margin: 10px 0 5px;
+  font-size: 1em;
+}
+
+.stars {
+  color: #ffcc00;
+}
+
+.card{
+    width: 100%;
+    height: 100%;
+}
+
+.card-tittle{
+    
+}
+.card img{
+    width: 90%;
+    height: 50%;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  margin-top: 30px;
+}
+
+footer i {
+  font-size: 1.3em;
+  color: #0078ff;
+  margin-right: 8px;
+}
+
+footer span {
+  color: #0078ff;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .filter {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .filter label {
+    width: 45%;
+  }
+}
