@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KhoaFilm — Danh sách phim</title>
+
+    <!-- Bootstrap & Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS chung -->
+    <link href="../css/khoafilm.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg kf-navbar sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="index.html">
+          <i class="bi bi-film me-1"></i> KhoaFilm
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMain"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="movies.html">Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="favorites.html">Favorites</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="kf-hero py-5">
+      <div class="container text-center">
+        <h1 class="display-6 fw-bold mb-2">Danh sách phim chiếu rạp 2025</h1>
+        <p class="mb-0 text-white-50">
+          Lọc nhanh theo thể loại, độ tuổi hoặc sắp xếp theo điểm đánh giá.
+        </p>
+      </div>
+    </header>
+
+    <!-- Bộ lọc & sắp xếp -->
+    <section class="kf-section pt-4 pb-0">
+      <div class="container">
+        <div class="row g-3 align-items-end">
+          <div class="col-12 col-md-4">
+            <label class="form-label kf-muted">Tìm kiếm</label>
+            <input
+              id="q"
+              type="text"
+              class="form-control"
+              placeholder="Nhập tên phim, quốc gia, từ khóa..."
+            />
+          </div>
+          <div class="col-6 col-md-3">
+            <label class="form-label kf-muted">Thể loại</label>
+            <select id="genre" class="form-select">
+              <option value="">Tất cả</option>
+              <option>Hài</option>
+              <option>Tình cảm</option>
+              <option>Kinh dị</option>
+              <option>Giả tưởng</option>
+              <option>Hành động</option>
+              <option>Siêu anh hùng</option>
+              <option>Chính kịch</option>
+              <option>Lịch sử</option>
+              <option>Hoạt hình</option>
+              <option>Gia đình</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-2">
+            <label class="form-label kf-muted">Độ tuổi</label>
+            <select id="age" class="form-select">
+              <option value="">Tất cả</option>
+              <option value="P">P</option>
+              <option value="13+">13+</option>
+              <option value="16+">16+</option>
+              <option value="18+">18+</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-2">
+            <label class="form-label kf-muted">Sắp xếp</label>
+            <select id="sort" class="form-select">
+              <option value="">Mặc định</option>
+              <option value="starDesc">Điểm cao → thấp</option>
+              <option value="lenDesc">Thời lượng dài → ngắn</option>
+              <option value="az">Tên A → Z</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-1 d-grid">
+            <button id="reset" class="btn btn-outline-light">Reset</button>
+          </div>
+        </div>
+
+        <!-- trạng thái đang lọc -->
+        <div class="mt-3 kf-muted" id="statusText">Đang tải danh sách…</div>
+      </div>
+    </section>
+
+    <!-- Danh sách -->
+    <main class="kf-section">
+      <div class="container">
+        <div id="filteredList" class="kf-grid"></div>
+        <p id="emptyMsg" class="text-center text-secondary mt-4 d-none">
+          Không tìm thấy phim phù hợp bộ lọc.
+        </p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="kf-footer">
+      <div class="container">
+        © 2025 KhoaFilm — Danh sách phim từ dữ liệu movies.json
+      </div>
+    </footer>
+
+    <!-- Modal Trailer dùng chung -->
+    <div
+      class="modal fade kf-modal"
+      id="trailerModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content border-0">
+          <button
+            type="button"
+            class="btn-close btn-close-white ms-auto me-2 mt-2"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+          <div class="modal-body p-0">
+            <div class="ratio ratio-16x9">
+              <iframe
+                id="trailerFrame"
+                src=""
+                title="Trailer"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Logic trang Movies: lọc/sắp xếp & render -->
+    <script src="../js/movies-page.js"></script>
+  </body>
+</html>
