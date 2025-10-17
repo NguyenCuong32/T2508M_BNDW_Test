@@ -14,7 +14,7 @@ body {
 .movie-card {
   border-radius: 12px;
   overflow: hidden;
-  background: white;
+  background: rgb(193, 192, 193);
   box-shadow: 0 6px 16px rgba(30, 30, 30, 0.06);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
