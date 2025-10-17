@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #151515;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+
+.navbar {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  height: 100%;
+  color: white;
+  font-family: "Sen", sans-serif;
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.logo {
+  font-size: 30px;
+  color: #4dbf00;
+}
+
+.menu-container {
+  flex: 6;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+}
+
+.menu-list-item {
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.menu-list-item.active {
+  font-weight: bold;
+  color: #4dbf00;
+}
+
+.profile-container {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.profile-picture {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-text-container {
+  margin: 0 20px;
+}
+
+.toggle {
+  width: 40px;
+  height: 20px;
+  background-color: white;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.toggle-icon {
+  color: goldenrod;
+}
+
+.toggle-ball {
+  width: 18px;
+  height: 18px;
+  background-color: black;
+  position: absolute;
+  right: 1px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 1s ease all;
+}
+
+
+.container {
+  background-color: #151515;
+  min-height: calc(100vh - 50px);
+}
+
+.content-container {
+  padding: 80px 100px;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 40px;
+  color: #4dbf00;
+  margin-bottom: 10px;
+}
+
+.contact-desc {
+  color: lightgray;
+  margin-bottom: 60px;
+}
+
+.contact-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 320px;
+  background-color: #222;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: white;
+  font-size: 15px;
+}
+
+textarea {
+  resize: none;
+}
+
+.btn {
+  background-color: #4dbf00;
+  border: none;
+  color: white;
+  padding: 12px 40px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #3a9600;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+  background-color: #222;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: left;
+}
+
+.contact-info h2 {
+  color: #4dbf00;
+  margin-bottom: 25px;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  color: lightgray;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: #4dbf00;
+}
+
+.social-icons {
+  margin-top: 30px;
+}
+
+.social-icons a {
+  color: white;
+  margin-right: 15px;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #4dbf00;
+}
+
+
+.toggle.active {
+  background-color: black;
+}
+
+.toggle-ball.active {
+  background-color: white;
+  transform: translateX(-20px);
+}
+
+.container.active {
+  background-color: white;
+  color: black;
+}
+
+.contact-form.active,
+.contact-info.active {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .content-container {
+    padding: 60px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-container {
+    display: none;
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 90%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-container {
+    padding: 40px 20px;
+  }
+
+  .contact-title {
+    font-size: 30px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
