@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - NetFilm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <div class="logo">🎞️ NetFilm</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="favourites.html">Favorites</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Enter some keywords">
+        </div>
+    </header>
+
+    <div class="main-container">
+        <main class="movie-content">
+            <div class="movie-preview" id="the-post">
+                <h1>Featured: The Post</h1>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/nrXlY6gzTTM" 
+                            title="The Post - Official Trailer" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="movie-description">
+                    <p><strong>The Post</strong> is a 2017 American political thriller film about <a href="#">The Washington Post</a> and the publication of the <a href="#">Pentagon Papers</a>. The film was directed by <a href="#">Steven Spielberg</a> and stars <a href="#">Meryl Streep</a> as <a href="#">Katharine Graham</a>, the first female publisher of a major American newspaper, and <a href="#">Tom Hanks</a> as <a href="#">Ben Bradlee</a>, the executive editor of the Post.</p>
+                    <p>The film follows the true story of the 1971 <a href="#">Pentagon Papers</a> controversy, when the <a href="#">New York Times</a> and the Washington Post raced to publish a series of articles based on a top-secret government study of U.S. political and military involvement in Vietnam from 1945 to 1967.</p>
+                </div>
+            </div>
+
+            <h2>Featured Movies</h2>
+            <div class="movie-grid">
+                
+                <!-- Movie Card 2 -->
+                <div class="movie-card" data-movie-id="the-godfather">
+                    <button class="favorite-btn" data-movie-id="the-godfather" aria-label="Add to favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <a href="movies.html#the-godfather">
+                        <div class="movie-poster" style="background-image: url('https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg')"></div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">The Godfather</h3>
+                            <div class="star-rating">★★★★★</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Movie Card 3 -->
+                <div class="movie-card" data-movie-id="inception">
+                    <button class="favorite-btn" data-movie-id="inception" aria-label="Add to favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <a href="movies.html#inception">
+                        <div class="movie-poster" style="background-image: url('https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg')"></div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">Inception</h3>
+                            <div class="star-rating">★★★★★</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Movie Card 5 -->
+                <div class="movie-card" data-movie-id="joker">
+                    <button class="favorite-btn" data-movie-id="joker" aria-label="Add to favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <a href="movies.html#joker">
+                        <div class="movie-poster" style="background-image: url('https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg')"></div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">Joker</h3>
+                            <div class="star-rating">★★★★☆</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Movie Card 6 -->
+                <div class="movie-card" data-movie-id="dune">
+                    <button class="favorite-btn" data-movie-id="dune" aria-label="Add to favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <a href="movies.html#dune">
+                        <div class="movie-poster" style="background-image: url('https://m.media-amazon.com/images/M/MV5BN2FjNmEyNWMtYzM0ZS00NjIyLTg5YzYtYThlMGVjNzE1OGViXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg')"></div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">Dune</h3>
+                            <div class="star-rating">★★★★☆</div>
+                        </div>
+                    </a>
+                </div>
+    </div>
+
+    <footer>
+        🎞️ <span>Blue Entertainment</span>
+    </footer>
+
+    <script src="favorites.js"></script>
+</body>
+</html>
