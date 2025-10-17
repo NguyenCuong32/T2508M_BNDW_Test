@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies - NetFilm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .category-item {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        
+        .category-item:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .category-item input[type="checkbox"] {
+            cursor: pointer;
+        }
+        
+        .movie-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .movie-card.hidden {
+            display: none;
+        }
+        
+        .movie-categories {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 5px;
+            z-index: 2;
+        }
+        
+        .category-tag {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+        
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            display: none;
+        }
+        
+        .no-results.show {
+            display: block;
+        }
+        
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            align-items: center;
+        }
+        
+        .filter-tag {
+            background: #e0e0e0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .filter-tag .remove-filter {
+            cursor: pointer;
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .clear-filters {
+            margin-left: 0.5rem;
+            color: #1E90FF;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">🎞️ NetFilm</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="movies.html" class="active">Movies</a></li>
+                <li><a href="favourites.html">Favorites</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Enter some keywords">
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="filter-controls">
+                <h3>Filter by Category</h3>
+                <div class="filter-tags" id="active-filters">
+                    <span class="clear-filters" id="clear-filters">Clear all</span>
+                </div>
+            </div>
+            <ul class="category-list">
+                <li class="category-item">
+                    <input type="checkbox" id="action" name="action" value="action">
+                    <label for="action">Action</label>
+                    <span class="category-count">(3)</span>
+                </li>
+                <li class="category-item">
+                    <input type="checkbox" id="adventure" name="adventure" value="adventure">
+                    <label for="adventure">Adventure</label>
+                    <span class="category-count">(4)</span>
+                </li>
+                <li class="category-item">
+                    <input type="checkbox" id="romance" name="romance" value="romance">
+                    <label for="romance">Romance</label>
+                    <span class="category-count">(2)</span>
+                </li>
+                <li class="category-item">
+                    <input type="checkbox" id="drama" name="drama" value="drama">
+                    <label for="drama">Drama</label>
+                    <span class="category-count">(4)</span>
+                </li>
+                <li class="category-item">
+                    <input type="checkbox" id="thriller" name="thriller" value="thriller">
+                    <label for="thriller">Thriller</label>
+                    <span class="category-count">(2)</span>
+                </li>
+                <li class="category-item">
+                    <input type="checkbox" id="sci-fi" name="sci-fi" value="sci-fi">
+                    <label for="sci-fi">Sci-Fi</label>
+                    <span class="category-count">(2)</span>
+                </li>
+                <li class="category-item">
+                    <input type="checkbox" id="crime" name="crime" value="crime">
+                    <label for="crime">Crime</label>
+                    <span class="category-count">(2)</span>
+                </li>
+                <li class="category-item">
+                    <input type="checkbox" id="biography" name="biography" value="biography">
+                    <label for="biography">Biography</label>
+                    <span class="category-count">(1)</span>
+                </li>
+            </ul>
+        </aside>
+
+
+            <h2>All Movies</h2>
+            <div class="movie-grid" id="movie-grid">
+                <!-- Movie Card 1 -->
+                <div class="movie-card" data-categories="drama,thriller,biography" data-movie-id="the-post">
+                    <button class="favorite-btn" data-movie-id="the-post" aria-label="Add to favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div class="movie-categories">
+                        <span class="category-tag">Drama</span>
+                        <span class="category-tag">Thriller</span>
+                    </div>
+                    <a href="#the-post">
+                        <div class="movie-poster" id="movie-poster-1"></div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">The Post</h3>
+                            <div class="star-rating">★★★★☆</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Movie Card 2 -->
+                <div class="movie-card" data-categories="drama,crime" data-movie-id="the-godfather">
+                    <button class="favorite-btn" data-movie-id="the-godfather" aria-label="Add to favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div class="movie-categories">
+                        <span class="category-tag">Drama</span>
+                        <span class="category-tag">Crime</span>
+                    </div>
+                    <a href="#the-godfather">
+                        <div class="movie-poster" id="movie-poster-2"></div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">The Godfather</h3>
+                            <div class="star-rating">★★★★★</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Movie Card 3 -->
+                <div class="movie-card" data-categories="drama,romance" data-movie-id="titanic">
+                    <button class="favorite-btn" data-movie-id="titanic" aria-label="Add to favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div class="movie-categories">
+                        <span class="category-tag">Drama</span>
+                        <span class="category-tag">Romance</span>
+                    </div>
+                    <a href="#titanic">
+                        <div class="movie-poster" id="movie-poster-3"></div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">Titanic</h3>
+                            <div class="star-rating">★★★★★</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Movie Card 4 -->
+                <div class="movie-card" data-categories="action,adventure,sci-fi" data-movie-id="inception">
+                    <button class="favorite-btn" data-movie-id="inception" aria-label="Add to favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div class="movie-categories">
+                        <span class="category-tag">Action</span>
+                        <span class="category-tag">Adventure</span>
+                        <span class="category-tag">Sci-Fi</span>
+                    </div>
+                    <a href="#inception">
+                        <div class="movie-poster" style="background-image: url('https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg')"></div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">Inception</h3>
+                            <div class="star-rating">★★★★★</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Movie Card 5 -->
+                <div class="movie-card" data-categories="action,crime,thriller" data-movie-id="john-wick">
+                    <button class="favorite-btn" data-movie-id="john-wick" aria-label="Add to favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div class="movie-categories">
+                        <span class="category-tag">Action</span>
+                        <span class="category-tag">Crime</span>
+                        <span class="category-tag">Thriller</span>
+                    </div>
+                    <a href="#john-wick">
+                        <div class="movie-poster" style="background-image: url('https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_.jpg')"></div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">John Wick</h3>
+                            <div class="star-rating">★★★★★</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Movie Card 6 -->
+                <div class="movie-card" data-categories="romance,drama" data-movie-id="la-la-land">
+                    <button class="favorite-btn" data-movie-id="la-la-land" aria-label="Add to favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <div class="movie-categories">
+                        <span class="category-tag">Romance</span>
+                        <span class="category-tag">Drama</span>
+                    </div>
+                    <a href="#la-la-land">
+                        <div class="movie-poster" style="background-image: url('https://m.media-amazon.com/images/M/MV5BMzUzNDM2NzM2MV5BMl5BanBnXkFtZTgwNTM3NTg4OTE@._V1_.jpg')"></div>
+                        <div class="movie-info">
+                            <h3 class="movie-title">La La Land</h3>
+                            <div class="star-rating">★★★★★</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="no-results" id="no-results">
+                    <i class="fas fa-film" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                    <h3>No movies found</h3>
+                    <p>Try adjusting your filters to find what you're looking for.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        🎞️ <span>Blue Entertainment</span>
+    </footer>
+
+    <script src="favorites.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('.category-item input[type="checkbox"]');
+            const movieCards = document.querySelectorAll('.movie-card');
+            const noResults = document.getElementById('no-results');
+            const activeFiltersContainer = document.getElementById('active-filters');
+            const clearFiltersBtn = document.getElementById('clear-filters');
+            
+            // Store active filters
+            let activeFilters = [];
+            
+            // Add event listeners to checkboxes
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', filterMovies);
+            });
+            
+            // Clear all filters
+            clearFiltersBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                activeFilters = [];
+                updateActiveFilters();
+                filterMovies();
+            });
+            
+            // Filter movies based on selected categories
+            function filterMovies() {
+                // Get all checked categories
+                activeFilters = [];
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        activeFilters.push(checkbox.value);
+                    }
+                });
+                
+                updateActiveFilters();
+                
+                // If no filters are selected, show all movies
+                if (activeFilters.length === 0) {
+                    movieCards.forEach(card => {
+                        card.classList.remove('hidden');
+                    });
+                    noResults.classList.remove('show');
+                    return;
+                }
+                
+                // Filter movies
+                let visibleCount = 0;
+                
+                movieCards.forEach(card => {
+                    const categories = card.getAttribute('data-categories').split(',');
+                    const hasMatchingCategory = activeFilters.some(filter => categories.includes(filter));
+                    
+                    if (hasMatchingCategory) {
+                        card.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+                
+                // Show/hide no results message
+                if (visibleCount === 0) {
+                    noResults.classList.add('show');
+                } else {
+                    noResults.classList.remove('show');
+                }
+            }
+            
+            // Update active filters display
+            function updateActiveFilters() {
+                // Clear current active filters
+                activeFiltersContainer.innerHTML = '';
+                
+                // Add active filters as tags
+                activeFilters.forEach(filter => {
+                    const filterTag = document.createElement('div');
+                    filterTag.className = 'filter-tag';
+                    filterTag.innerHTML = `
+                        ${filter}
+                        <span class="remove-filter" data-category="${filter}">×</span>
+                    `;
+                    activeFiltersContainer.appendChild(filterTag);
+                });
+                
+                // Add clear all button if there are active filters
+                if (activeFilters.length > 0) {
+                    const clearAll = document.createElement('span');
+                    clearAll.className = 'clear-filters';
+                    clearAll.textContent = 'Clear all';
+                    clearAll.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        checkboxes.forEach(checkbox => {
+                            checkbox.checked = false;
+                        });
+                        activeFilters = [];
+                        updateActiveFilters();
+                        filterMovies();
+                    });
+                    activeFiltersContainer.appendChild(clearAll);
+                }
+                
+                // Add event listeners to remove buttons
+                document.querySelectorAll('.remove-filter').forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const category = this.getAttribute('data-category');
+                        const checkbox = document.querySelector(`input[value="${category}"]`);
+                        if (checkbox) {
+                            checkbox.checked = false;
+                            filterMovies();
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+    
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            margin-bottom: 2rem;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+        
+        .movie-preview {
+            margin-bottom: 3rem;
+        }
+        
+        .movie-description {
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .movie-description p {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Movie poster backgrounds */
+        #movie-poster-1 { background-image: url('https://m.media-amazon.com/images/M/MV5BMjQxMDE5NDg0NV5BMl5BanBnXkFtZTgwNTA5MDE2NDM@._V1_.jpg'); }
+        #movie-poster-2 { background-image: url('https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg'); }
+        #movie-poster-3 { background-image: url('https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg'); }
+        #movie-poster-4 { background-image: url('https://m.media-amazon.com/images/M/MV5BMTc5NTM5OTY0Nl5BMl5BanBnXkFtZTcwNjg1MDU4OA@@._V1_.jpg'); }
+        #movie-poster-5 { background-image: url('https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2JkLTg1YTctZDJhNmY2ZjI4MTFjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg'); }
+        #movie-poster-6 { background-image: url('https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZmUwZWI0M2E1OTU2XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg'); }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .category-item {
+                padding: 0.3rem;
+            }
+            
+            .category-tag {
+                font-size: 0.6rem;
+                padding: 1px 6px;
+            }
+            
+            .filter-tag {
+                font-size: 0.8rem;
+                padding: 0.2rem 0.6rem;
+            }
+        }
+    </style>
+</body>
+</html>
