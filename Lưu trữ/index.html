@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+
+<body>
+   <header>
+    <div>
+      
+        <nav class="navbar navbar-expand-sm bg-light ">
+          <a class="navbar-brand fw-bold" href="Phim.html">Phim Hay</a>
+          <input type="text" id="searchBox" placeholder="Tìm kiếm sản phẩm...">
+        <div class="collapse navbar-collapse m-2" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+            
+                <li class="nav-item">
+                  
+                    <a class="nav-link active" href="index.html">Trang chủ</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="About.html">Về chúng tôi</a></li>
+                <li class="nav-item"><a class="nav-link" href="Movies.html">Phim</a></li>
+                 <li class="nav-item"><a class="nav-link" href="Favorites.html">Yêu thích</a></li>
+                </li>
+            </ul>
+        </div>
+        </nav>
+        
+    </div>
+
+</header>
+<aside class="sidebar">
+    <h3>Thể loại phim</h3>
+    <ul>
+        <li><input type="checkbox" class="genre-filter" value="Action">Hành động</li>
+        <li><input type="checkbox" class="genre-filter" value="Romance">Tình cảm</li>
+        <li><input type="checkbox" class="genre-filter" value="Comedy">Hài hước</li>
+        <li><input type="checkbox" class="genre-filter" value="Drama">Tâm lý</li>
+        <li><input type="checkbox" class="genre-filter" value="Horror">Kinh dị</li>
+        <li><input type="checkbox" class="genre-filter" value="Adventure">Phiêu lưu</li>
+    </ul>
+
+</aside>
+<div class="name"><h2>Một số thể loại phim</h2></div>
+<section class="movie-list">
+    <div class="movie-card" data-genre="Action,Horror">
+        <img src="./index.img/post.jpg" alt="The post">
+        <h4>The Post</h4>
+        <p>Kinh dị / Hành động</p>
+    </div>
+     <div class="movie-card" data-genre="Action,Adventure">
+        <img src="./index.img/avatar.jpg" alt="Avatar">
+        <h4>Avatar</h4>
+        <p>Hành động / Phiêu lưu</p>
+    </div>
+     <div class="movie-card" data-genre="Romance,Drama">
+        <img src="./index.img/titanic.jpg" alt="anh">
+        <h4>Titanic</h4>
+        <p>Tình cảm / Tâm lý</p>
+    </div>
+     <div class="movie-card" data-genre="Comedy,Drama">
+        <img src="./index.img/parasite.jpg" alt="anh">
+        <h4>Parasite</h4>
+        <p>Hài hước / Tâm lý</p>
+    </div>
+     <div class="movie-card" data-genre="Adventure,Romance">
+        <img src="./index.img/lions.jpg" alt="anh">
+        <h4>Lions</h4>
+        <p>Phiêu lưu / Tình cảm</p>
+    </div>
+     <div class="movie-card" data-genre="Action,Horror">
+        <img src="./index.img/father.jpg" alt="anh">
+        <h4>The Godfather</h4>
+        <p>Hành động / Kinh dị</p>
+    </div>
+
+</section>
+<script>
+  const checkboxes = document.querySelectorAll('.genre-filter');
+  const movieCards = document.querySelectorAll('.movie-card');
+
+  checkboxes.forEach(box => {
+    box.addEventListener('change', () => {
+      const selectedGenres = Array.from(checkboxes)
+        .filter(c => c.checked)
+        .map(c => c.value);
+
+      movieCards.forEach(card => {
+        const genres = card.dataset.genre.split(',');
+        const match = selectedGenres.length === 0 || 
+                      genres.some(g => selectedGenres.includes(g.trim()));
+
+        card.style.display = match ? 'block' : 'none';
+      });
+    });
+  });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        const searchBox = document.getElementById("searchBox");
+        const movies = document.querySelectorAll(".movie-card");
+        searchBox.addEventListener("keyup", function(){
+            const keyword = searchBox.value.toLowerCase().trim();
+            movies.forEach(movie => {
+               const title = movie.querySelector("h4").textContent.toLowerCase();
+               if (title.includes(keyword)){
+                movie.style.display = "block";
+               } else{
+                movie.style.display = "none";
+               }
+            });
+        });
+    });
+
+</script>
+<footer>
+    <div class="container">
+      <div class="footer-elements">
+        <div class="side-left">
+            <div class="sl-brand line-center" >
+                <h3>Phim hay</h3>
+                <div class="socials line-center">
+                    <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+
+                </div>
+
+
+            </div>
+            
+            <div class="sl-menu mb-3">
+               <p>Hỏi đáp</p>
+               <p>Chính sách bảo mật </p>
+               <p>Điều khoản sử dụng</p>
+               <p>Giới thiệu</p>
+               <p>Liên hệ</p>
+            </div>
+            <div class="sl-menu mb-3">
+               <p>Dongphim</p>
+               <p>Ghienphim </p>
+               <p>Motphim</p>
+               <p>Subnhanh</p>
+              
+
+            </div>
+            <div class="sl-notice mb-2">
+                RoPhim - Phim hay cả rổ - Trang xem phim online chất lượng cao miễn phí Vietsub, thuyết minh, lồng tiếng full HD. Kho phim mới khổng lồ, phim chiếu rạp, phim bộ, phim lẻ từ nhiều quốc gia như Việt Nam, Hàn Quốc, Trung Quốc, Thái Lan, Nhật Bản, Âu Mỹ… đa dạng thể loại. Khám phá nền tảng phim trực tuyến hay nhất 2024 chất lượng 4K!
+
+            </div>
+            
+            
+
+        </div>
+
+
+      </div>
+
+    </div>
+</footer>

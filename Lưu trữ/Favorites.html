@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header>
+    <div>
+      
+        <nav class="navbar navbar-expand-sm bg-light ">
+          <a class="navbar-brand fw-bold text-dark" href="Phim.html">Phim Hay</a>
+            <input type="text" id="searchBox" placeholder="Tìm kiếm sản phẩm...">
+        <div class="collapse navbar-collapse m-2" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+          
+                <li class="nav-item">
+                  
+                    <a class="nav-link active" href="./index.html">Trang chủ</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="About.html">Về chúng tôi</a></li>
+                <li class="nav-item"><a class="nav-link" href="Movies.html">Phim</a></li>
+                 <li class="nav-item"><a class="nav-link active" href="Favorites.html">Yêu thích</a></li>
+                </li>
+            </ul>
+        </div>
+        </nav>
+        
+    </div>
+
+</header>
+<aside class="sidebar">
+    <h3>Thể loại phim</h3>
+    <ul>
+        <li><input type="checkbox" class="genre-filter" value="Việt Nam"> Phim Việt Nam</li>
+        <li><input type="checkbox" class="genre-filter" value="Trung Quốc">Phim Trung Quốc</li>
+        <li><input type="checkbox" class="genre-filter" value="Hàn Quốc">Phim Hàn Quốc</li>
+        <li><input type="checkbox" class="genre-filter" value="US-UK">Phim US-UK</li>
+        <li><input type="checkbox" class="genre-filter" value="Phim chiếu rạp">Phim chiếu rạp</li>
+       
+    </ul>
+
+</aside>
+   
+
+<script>
+  const checkboxes = document.querySelectorAll('.genre-filter');
+  const movieCards = document.querySelectorAll('.movie-card');
+
+  checkboxes.forEach(box => {
+    box.addEventListener('change', () => {
+      const selectedGenres = Array.from(checkboxes)
+        .filter(c => c.checked)
+        .map(c => c.value);
+
+      movieCards.forEach(card => {
+        const genres = card.dataset.genre.split(',');
+        const match = selectedGenres.length === 0 || 
+                      genres.some(g => selectedGenres.includes(g.trim()));
+
+        card.style.display = match ? 'block' : 'none';
+      });
+    });
+  });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        const searchBox = document.getElementById("searchBox");
+        const movies = document.querySelectorAll(".movie-card");
+        searchBox.addEventListener("keyup", function(){
+            const keyword = searchBox.value.toLowerCase().trim();
+            movies.forEach(movie => {
+               const title = movie.querySelector("h4").textContent.toLowerCase();
+               if (title.includes(keyword)){
+                movie.style.display = "block";
+               } else{
+                movie.style.display = "none";
+               }
+            });
+        });
+    });
+
+</script>
+<section class="movie-list" id="favoritesList"></section>
+ <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      const list = document.getElementById("favoritesList");
+
+      if (favorites.length === 0) {
+        list.innerHTML = "<p>Bạn chưa thêm phim nào vào yêu thích.</p>";
+        return;
+      }
+
+      favorites.forEach(movie => {
+        const card = document.createElement("div");
+        card.classList.add("movie-card");
+        card.innerHTML = `
+          <img src="${movie.img}" alt="${movie.title}">
+          <h4>${movie.title}</h4>
+        `;
+        list.appendChild(card);
+      });
+    });
+  </script>
+  
+</body>
+</html>
