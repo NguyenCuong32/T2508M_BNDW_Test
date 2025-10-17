@@ -221,3 +221,41 @@ body {
     justify-content: center;
   }
 }
+
+/* ==== Nút Xem phim & Trailer (KhoaFilm style) ==== */
+
+/* Nút xem phim: gradient đỏ-cam */
+.btn-watch {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  color: #fff !important;
+  font-weight: 600;
+  border: none;
+  transition: 0.3s ease;
+  box-shadow: 0 0 8px rgba(255, 75, 43, 0.4);
+}
+.btn-watch:hover {
+  background: linear-gradient(90deg, #ff4b2b, #ff416c);
+  box-shadow: 0 0 16px rgba(255, 75, 43, 0.7);
+  transform: translateY(-2px);
+}
+
+/* Nút trailer: viền tím neon */
+.btn-trailer {
+  background: transparent;
+  color: #c9a9ff !important;
+  border: 1px solid #8a2be2;
+  font-weight: 500;
+  transition: 0.3s ease;
+  box-shadow: 0 0 8px rgba(138, 43, 226, 0.3);
+}
+.btn-trailer:hover {
+  background: rgba(138, 43, 226, 0.2);
+  box-shadow: 0 0 16px rgba(138, 43, 226, 0.7);
+  transform: translateY(-2px);
+}
+
+/* Tùy chọn: hiệu ứng bấm */
+.btn-watch:active,
+.btn-trailer:active {
+  transform: scale(0.96);
+}
