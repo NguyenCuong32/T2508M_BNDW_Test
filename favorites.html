@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Favorites - NetFilm</title>
+
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <header class="bg-white border-bottom">
+        <nav class="container navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand fw-bold" href="./index.html"><i class="bi bi-film"></i> NetFilm</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="./about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./movies.html">Movies</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./favorites.html">Favorites</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-4 flex-grow-1">
+        <h4>Your Favorites</h4>
+        <div id="favoritesGrid" class="row g-3">
+            <!-- JS inject favorites -->
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-auto">
+        <div class="container d-flex justify-content-between">
+            <div>NetFilm © <span id="year4"></span></div>
+            <div class="small">Saved to localStorage</div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

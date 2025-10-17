@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetFilm - Home</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <!--Header/Navbar-->
+    <header class="bg-white border-bottom">
+        <nav class="container navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-film"></i> NetFilm
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collaspe" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./movies.html">Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./favorites.html">Favorites</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <form class="d-flex" role="search">
+                            <input class="form-control form-control-sm" type="search" placeholder="Search movies..."
+                                id="searchInput" aria-label="Search">
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--Main Content-->
+    <main class="container my-4 flex-grow-1">
+        <div class="row">
+            <!--Sidebar filters-->
+            <aside class="col-md-3 mb-4">
+                <div class="card p-3">
+                    <h6 class="mb-2">Genres</h6>
+                    <div id="genreFilters" class="form-check">
+                        <!--JS will inject genre filters-->
+                    </div>
+                    <hr>
+                    <h6 class="mb-2">Other</h6>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="hdOnly">
+                        <label class="form-check-label" for="hdOnly">HD Only</label>
+                    </div>
+                </div>
+            </aside>
+            <!--Content-->
+            <section class="col-md-9">
+                <!--Hero/Video-->
+                <div class="card mb-4">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-md-5 p-3 d-flex justify-content-center">
+                            <!--Youtube embed as trailer-->
+                            <div class="ratio ratio-16x9 w-100 shadow-sm">
+                                <iframe width="560" height="315"
+                                    src="https://www.youtube.com/embed/nrXlY6gzTTM?si=F1-rmXo2fpBwam-t"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-7 p-3">
+                            <h4 class="card-title">The Post (Example)</h4>
+                            <p class="text-muted small">A short description of the highlighted movies. This area can
+                                show synopsis, cast, rating, tags,etc.</p>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-outline-primary btn-sm" id="watchBtn"><i
+                                        class="bi bi-play-fill"></i> Watch Trailer</button>
+                                <button class="btn btn-outline-secondary btn-sm" id="moreBtn"><i
+                                        class="bi bi-info-circle"></i> More Info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Movie grid -->
+                <div id="moviesGrid" class="row g-3">
+                    <!-- JS inject cards here -->
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-auto">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <strong>NetFilm</strong> © <span id="year"></span>
+                <div class="small">Build Modern Websites - Practical</div>
+            </div>
+            <div>
+                <a href="#" class="text-light me-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-light me-2"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-light"><i class="bi bi-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS bundle -->
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- App JS -->
+    <script src="./script.js"></script>
+</body>
+
+</html>

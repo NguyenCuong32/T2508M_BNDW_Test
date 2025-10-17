@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us - NetFilm</title>
+
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <header class="bg-white border-bottom">
+        <nav class="container navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-film"></i> NetFilm</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="./about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./movies.html">Movies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./favorites.html">Favorites <span id="fav-count-3"
+                                class="badge bg-danger ms-1">0</span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5 flex-grow-1">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>About NetFilm</h2>
+                <p>NetFilm is a practice project to demonstrate building modern websites using Bootstrap 5, HTML, CSS
+                    and JavaScript. This mini-app includes pages for Home, Movies, About, and Favorites. Use filters,
+                    search, and save favorite movies to your browser's local storage.</p>
+
+                <h5 class="mt-4">Objective</h5>
+                <ul>
+                    <li>Practice layout, responsive grid and navigation.</li>
+                    <li>Create reusable components (movie cards).</li>
+                    <li>Implement lightweight interactivity with JS.</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h6>Contact</h6>
+                    <p class="mb-1"><strong>Email:</strong> admin@netfilm.local</p>
+                    <p class="mb-1"><strong>Phone:</strong> +84 9x xxx xxxx</p>
+                    <p class="mb-0"><strong>Address:</strong> Hanoi, Vietnam</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-auto">
+        <div class="container d-flex justify-content-between">
+            <div>NetFilm © <span id="year3"></span></div>
+            <div class="small">Built for Practical Exam</div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

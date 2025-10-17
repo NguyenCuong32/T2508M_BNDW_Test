@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NetFilm - Movies</title>
+
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <header class="bg-white border-bottom">
+        <nav class="container navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-film"></i> NetFilm</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav2">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="./about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./movies.html">Movies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./favorites.html">Favorites <span id="fav-count-2"
+                                class="badge bg-danger ms-1">0</span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-4 flex-grow-1">
+        <div class="row">
+            <aside class="col-md-3 mb-4">
+                <div class="card p-3">
+                    <h6>Filter</h6>
+                    <div id="genreFilters2" class="form-check"></div>
+                    <hr>
+                    <button class="btn btn-sm btn-outline-primary w-100" id="clearFilters">Clear filters</button>
+                </div>
+            </aside>
+
+            <section class="col-md-9">
+                <h4 class="mb-3">All Movies</h4>
+                <div id="moviesGridAll" class="row g-3">
+                    <!-- JS injected list -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container d-flex justify-content-between">
+            <div>NetFilm © <span id="year2"></span></div>
+            <div class="small">Practical exam layout</div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
