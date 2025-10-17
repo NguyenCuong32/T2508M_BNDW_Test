@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanh Tiến Trình</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    .progress-container {
+      width: 100%;
+      background-color: #f3f3f3;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    .progress-bar {
+      height: 30px; 
+      width: 0%;
+      background: repeating-linear-gradient(
+        45deg,
+        #4caf50,
+        #4caf50 10px,
+        #43a047 10px,
+        #43a047 20px
+      );
+      color: white;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 8px 0 0 8px;
+      transition: width 0.1s linear;
+    }
+    #status {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Thanh Tiến Trình (10 giây)</h2>
+  <div class="progress-container">
+    <div id="progressBar" class="progress-bar">0%</div>
+  </div>
+  <p id="status"></p>
+
+  <script>
+    let progress = 0;
+    const bar = document.getElementById("progressBar");
+    const status = document.getElementById("status");
+
+    const interval = setInterval(() => {
+      progress += 1;
+      bar.style.width = progress + "%";
+      bar.textContent = progress + "%";
+
+      if (progress >= 100) {
+        clearInterval(interval);
+        status.textContent = "Hoàn thành!";
+      }
+    }, 100); // 100ms * 100 = 10 giây
+  </script>
+</body>
+</html>

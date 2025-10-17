@@ -1,0 +1,55 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(255, 255, 255);
+    color: white;
+    margin: 0px;
+}
+
+div {
+    height: 360px;
+    width: 300px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 8px;
+    margin: 8px;
+    padding: 4px;
+}
+div:hover{
+    background-color: rgb(26, 26, 25);;
+}
+#btnRegister{
+    height: auto; 
+}
+#btnFollow{
+    height: auto;
+}
+.myButton{
+     height: auto; 
+    width: 80px; 
+    color: rgb(255, 255, 255); 
+    background-color: black;
+    border-radius: 8px; 
+    border: none;
+    padding: 8px;
+    margin: 8px;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+}
+.myButton:hover{
+    background-color: rgb(153, 131, 131);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+input{
+    margin: 8px;
+    height: 24px;
+    width: 240px;
+    border-radius: 8px;
+    border-color: rgb(231, 189, 189);
+    border: 2px;;
+    font-size: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: normal;
+}
+label{
+    font-weight: 600;
+}

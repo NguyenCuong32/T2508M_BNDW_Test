@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scrolling Text</title>
+<style>
+  body {
+    margin: 0;
+    background-color: black;
+    overflow: hidden;
+  }
+
+  /* Định dạng chung cho tất cả dòng chữ */
+  .marquee {
+    position: absolute;
+    white-space: nowrap;
+    color: hotpink;
+    font-size: 40px;
+    font-family: Arial, sans-serif;
+    animation: scrollText 12s linear infinite;
+  }
+
+  /* Hiệu ứng chạy ngang */
+  @keyframes scrollText {
+    0%   { transform: translateX(100vw); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* Mỗi dòng có vị trí dọc khác nhau (từ 0% tới 100%) */
+  .line1  { top: 5%; }
+  .line2  { top: 15%; }
+  .line3  { top: 25%; }
+  .line4  { top: 35%; }
+  .line5  { top: 25%; }
+  .line6  { top: 35%; }
+  .line7  { top: 35%; }
+  .line8  { top: 75%; }
+  .line9  { top: 85%; }
+  .line10 { top: 95%; }
+  .line11 { top: 50%; } /* Dòng chính giữa */
+</style>
+</head>
+<body>
+  <div class="marquee line1">i just want my sweet girl back</div>
+  <div class="marquee line2">i just want my sweet girl back</div>
+  <div class="marquee line3">i just want my sweet girl back</div>
+  <div class="marquee line4">i just want my sweet girl back</div>
+  </body>
+</html>
+
