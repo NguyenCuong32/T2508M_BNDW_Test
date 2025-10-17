@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movie Website -  Demo netfilm</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  
+  <header class="text-center py-3 bg-white shadow-sm">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center flex-wrap">
+        <div>
+          <img src="./imag/logo.png" alt="FPT logo" class="me-2">
+          <img src="./imag/logo2.png" alt="Aptech logo">
+        </div>
+        <div>
+          <h5 class="mb-0 fw-bold">Building Modern Websites - Exam Page</h5>
+          <small>Duration: 60 minutes | Marks: 15</small>
+        </div>
+        <div class="fw-bold text-secondary">NetFilm</div>
+      </div>
+    </div>
+  </header>
+
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary mt-2">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Menu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Movies</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Favorites</a></li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" id="searchInput" placeholder="Search movies...">
+          <button class="btn btn-outline-primary" type="button" id="clearBtn">Clear</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="container my-4">
+    <div class="row">
+    
+      <aside class="col-md-3 mb-3">
+        <div class="card">
+          <div class="card-header fw-bold">Genres</div>
+          <ul class="list-group list-group-flush" id="genreList">
+            <li class="list-group-item"><input type="checkbox" data-genre="Action"> Action</li>
+            <li class="list-group-item"><input type="checkbox" data-genre="Adventure"> Adventure</li>
+            <li class="list-group-item"><input type="checkbox" data-genre="Romance"> Romance</li>
+            <li class="list-group-item"><input type="checkbox" data-genre="Documentary"> Documentary</li>
+            <li class="list-group-item"><input type="checkbox" data-genre="War"> War</li>
+            <li class="list-group-item"><input type="checkbox" data-genre="Sport"> Sport</li>
+            <li class="list-group-item"><input type="checkbox" data-genre="Musical"> Musical</li>
+            <li class="list-group-item"><input type="checkbox" data-genre="Family"> Family</li>
+          </ul>
+        </div>
+      </aside>
+
+    
+      <main class="col-md-9">
+        <div class="card mb-4">
+          <div class="ratio ratio-16x9">
+            <a href="https://www.youtube.com/watch?v=SzOfBydxcHU&pp=ygUIdGhlIHBvc3Q%3D" target="_blank" class="video-thumbnail"></a>
+            <img src="./imag/the post2.jpg" title="The Post trailer" allowfullscreen></img>
+            <a href="https://www.youtube.com/watch?v=SzOfBydxcHU&pp=ygUIdGhlIHBvc3Q%3D" target="_blank" class="video-thumbnail"></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">The Post</h5>
+            <p class="card-text small text-muted">
+              The Post is a 2017 American political thriller film about The Washington Post and the publication of the Pentagon Papers. Directed by Steven Spielberg and starring Meryl Streep and Tom Hanks.
+            </p>
+          </div>
+        </div>
+
+        
+        <h5 class="fw-bold mb-3">Popular Movies (<span id="countShown">6</span>)</h5>
+        <div class="row g-3" id="cardsContainer">
+        
+          <div class="col-6 col-md-4 col-lg-3 movie" data-title="Địa đạo" data-genres="Drama,Documentary">
+            <div class="card h-100">
+              <img src="./imag/địa đạo.jfif" class="card-img-top" alt="">
+              <div class="card-body text-center">
+                <h6 class="card-title">Địa đạo</h6>
+                <p class="text-warning mb-0">★★★★☆</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3 movie" data-title="Kẻ ăn hồn" data-genres="Crime,Drama">
+            <div class="card h-100">
+              <img src="./imag/tải xuống.jfif" class="card-img-top" alt="">
+              <div class="card-body text-center">
+                <h6 class="card-title">Kẻ ăn hồn</h6>
+                <p class="text-warning mb-0">★★★★★</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3 movie" data-title="Mắt biếc" data-genres="Romance,Drama">
+            <div class="card h-100">
+              <img src="./imag/mắt biếc.jfif" class="card-img-top" alt="">
+              <div class="card-body text-center">
+                <h6 class="card-title">Mắt biếc</h6>
+                <p class="text-warning mb-0">★★★★☆</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3 movie" data-title="Chú ngyền" data-genres="Action,Adventure">
+            <div class="card h-100">
+              <img src="./imag/chú nguyền.jfif" class="card-img-top" alt="">
+              <div class="card-body text-center">
+                <h6 class="card-title">Chú nguyền</h6>
+                <p class="text-warning mb-0">★★★☆☆</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3 movie" data-title="Tee yod" data-genres="Thriller,Drama">
+            <div class="card h-100">
+              <img src="./imag/tee yod.jfif" class="card-img-top" alt="">
+              <div class="card-body text-center">
+                <h6 class="card-title">Tee yod</h6>
+                <p class="text-warning mb-0">★★★★★</p>
+              </div>
+            </div>
+          </div>
+            <div class="col-6 col-md-4 col-lg-3 movie" data-title="XXX" data-genres="Action,Adventure">
+            <div class="card h-100">
+              <img src="./imag/tải xuống (1).jfif" class="card-img-top" alt="">
+              <div class="card-body text-center">
+                <h6 class="card-title">XXX</h6>
+                <p class="text-warning mb-0">★★★☆☆</p>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <footer class="text-center text-muted py-3 small">
+    © 2025 FPT Aptech - Demo netfilm
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const clearBtn = document.getElementById('clearBtn');
+    const genreCheckboxes = document.querySelectorAll('#genreList input[type="checkbox"]');
+    const movies = document.querySelectorAll('.movie');
+    const countShown = document.getElementById('countShown');
+
+    function filterMovies() {
+      const search = searchInput.value.toLowerCase();
+      const selectedGenres = Array.from(genreCheckboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.dataset.genre.toLowerCase());
+
+      let visible = 0;
+      movies.forEach(movie => {
+        const title = movie.dataset.title.toLowerCase();
+        const genres = movie.dataset.genres.toLowerCase();
+        const matchSearch = title.includes(search);
+        const matchGenre = selectedGenres.length === 0 || selectedGenres.some(g => genres.includes(g));
+
+        if (matchSearch && matchGenre) {
+          movie.style.display = '';
+          visible++;
+        } else {
+          movie.style.display = 'none';
+        }
+      });
+      countShown.textContent = visible;
+    }
+
+    searchInput.addEventListener('input', filterMovies);
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      genreCheckboxes.forEach(cb => cb.checked = false);
+      filterMovies();
+    });
+    genreCheckboxes.forEach(cb => cb.addEventListener('change', filterMovies));
+  </script>
+</body>
+</html>
