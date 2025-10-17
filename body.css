@@ -1,0 +1,85 @@
+#header nav ul {
+
+    list-style: none;
+    display: flex;
+    
+}
+#header nav ul li a {
+   text-decoration: none;
+   color: white;
+   line-height: 72px;
+
+   
+}
+#header nav ul li {
+    margin-left: 30px;
+}
+
+
+#header input {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: none;
+   margin-bottom: 10px;
+}
+#header {
+    justify-content: space-between;
+    display: flex;
+     align-items: center;
+      padding: 10px 30px;
+}
+/*  justify-content: space-between and flex  */
+#header nav a:hover {
+    font-size: large;
+    color: blue
+
+
+}
+#font {
+    
+     position: relative;
+     width: fit-content;
+}
+    
+.font i {
+    top: 6%;
+    right: 40px;
+    position: absolute;
+    color: black;
+}
+#content img {
+    width: 100%;
+     object-fit: cover;
+    height: auto;
+    display: block;
+}
+.card-header {
+    padding: 0;
+     border-radius: 10px;
+}
+.card {
+
+    border-radius: 10px; /* bạn chọn độ cong */
+     overflow: hidden;     
+     /* overflow hidden để ảnh bo tròn theo khung */
+      
+}
+
+#content {
+    background-image: url(./assets/img/dance.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.card:hover {
+     transform: translateY(-5px);
+      
+}
+ul {
+    list-style: none;
+}
+li {
+    margin-top: 8px;
+    text-align: center;
+}
+
