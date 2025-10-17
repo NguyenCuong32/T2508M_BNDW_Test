@@ -3,1195 +3,134 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>KhoaFilm — Phim Hay | Home</title>
+    <title>KhoaFilm — Phim chiếu rạp 2025</title>
 
-    <!-- Bootstrap CSS (CDN) -->
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Swiper CSS (carousel) (CDN) -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-      rel="stylesheet"
-    />
-    <!-- Plyr CSS (trình phát YouTube) (CDN) -->
-    <link href="https://cdn.plyr.io/3.7.8/plyr.css" rel="stylesheet" />
-    <!-- Bootstrap Icons (icon giao diện) (CDN) -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-
-    <!-- CSS tuỳ biến của dự án -->
-    <link href="css/style.css" rel="stylesheet" />
-
-    <!-- Tối ưu kết nối đến YouTube (giảm độ trễ) -->
-    <link rel="preconnect" href="https://www.youtube.com" />
-    <link rel="preconnect" href="https://i.ytimg.com" />
-
-    <meta
-      name="description"
-      content="KhoaFilm - Banner trailer YouTube + danh sách đề xuất đồng bộ, thêm 36 phim chia 6 thể loại kèm độ tuổi."
-    />
+    <!-- Custom CSS -->
+    <link href="../css/khoafilm.css" rel="stylesheet" />
   </head>
-  <body class="bg-dark text-light">
-    <!-- =================== NAVBAR (dùng lại cho mọi trang) =================== -->
-    <nav
-      class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary sticky-top rm-navbar"
-    >
+  <body>
+    <!-- ===== Navbar ===== -->
+    <nav class="navbar navbar-expand-lg kf-navbar sticky-top">
       <div class="container">
-        <!-- Brand -->
         <a class="navbar-brand fw-semibold" href="index.html">
-          <i class="bi bi-film"></i> KhoaFilm
+          <i class="bi bi-film me-1"></i> KhoaFilm
         </a>
-
-        <!-- Nút mở menu trên mobile -->
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-          aria-controls="mainNav"
-          aria-expanded="false"
-          aria-label="Mở menu"
+          data-bs-target="#navMain"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- Menu -->
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
+              <a class="nav-link active" href="./index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
+              <a class="nav-link" href="./about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="movies.html">Movies</a>
+              <a class="nav-link" href="./favorites.html">Favorites</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="favorites.html">Favorites</a>
+              <a class="nav-link" href="./contact.html">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <main>
-      <!-- =================== BANNER TRAILER (YouTube + Plyr) =================== -->
-      <!-- Yêu cầu: phần đầu là banner, phía trên có video trailer. Khi carousel “Đề xuất” chuyển thì trailer cũng chuyển theo. -->
-      <section class="py-4 rm-section">
-        <div class="container">
-          <div
-            class="position-relative rounded-3 overflow-hidden shadow"
-            id="bannerHolder"
+    <!-- ===== Header Hero ===== -->
+    <header class="kf-hero py-5">
+      <div class="container">
+        <h1 class="display-6 fw-bold mb-2">Phim chiếu rạp 2025</h1>
+        <p class="mb-3 text-white-50">
+          8 phim đa thể loại • Trailer YouTube • Chuyển sang trang xem phim
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <span class="kf-chip"
+            ><i class="bi bi-emoji-smile"></i> Hài • Tình cảm</span
           >
-            <!-- Tỉ lệ khung hình 16:9 cho video -->
-            <div class="ratio ratio-16x9">
-              <!-- Plyr: chỉ nhúng YouTube -->
-              <div
-                id="player"
-                data-plyr-provider="youtube"
-                data-plyr-embed-id="YoHD9XEInc0"
-                title="Trailer"
-              ></div>
-            </div>
-
-            <!-- Overlay hiển thị tiêu đề + meta (năm, thể loại) trên banner -->
-            <div
-              class="position-absolute bottom-0 start-0 w-100 p-3 rm-banner-overlay"
-            >
-              <div
-                class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-3"
-              >
-                <div>
-                  <h1 class="h4 mb-1" id="bannerTitle">Inception</h1>
-                  <p class="mb-0 text-white-50 small" id="bannerMeta">
-                    2010 • Action, Sci-Fi
-                  </p>
-                </div>
-                <div class="d-flex gap-2">
-                  <a href="movies.html" class="btn btn-danger btn-sm">
-                    <i class="bi bi-play-fill me-1"></i>Xem ngay
-                  </a>
-                  <a href="movies.html" class="btn btn-outline-light btn-sm"
-                    >Danh sách</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /bannerHolder -->
+          <span class="kf-chip"
+            ><i class="bi bi-ghost"></i> Kinh dị • Giả tưởng</span
+          >
+          <span class="kf-chip"
+            ><i class="bi bi-lightning-charge"></i> Hành động • Siêu anh
+            hùng</span
+          >
+          <span class="kf-chip"
+            ><i class="bi bi-hourglass-split"></i> Chính kịch • Lịch sử</span
+          >
         </div>
-      </section>
+      </div>
+    </header>
 
-      <!-- =================== CAROUSEL ĐỀ XUẤT (Swiper) =================== -->
-      <!-- Giữ nguyên phần “đồng bộ trailer” như trước, tự động chuyển 2s -->
-      <section class="py-2 rm-section">
-        <div class="container">
-          <div class="d-flex align-items-center justify-content-between mb-3">
-            <h2 class="h5 mb-0">Đề xuất cho bạn</h2>
-            <div class="d-none d-md-flex align-items-center gap-2">
-              <button
-                class="btn btn-outline-secondary btn-sm swiper-prev"
-                aria-label="Prev"
-              >
-                <i class="bi bi-chevron-left"></i>
-              </button>
-              <button
-                class="btn btn-outline-secondary btn-sm swiper-next"
-                aria-label="Next"
-              >
-                <i class="bi bi-chevron-right"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="swiper movie-swiper">
-            <div class="swiper-wrapper">
-              <!-- ========== Slide 1 ========== -->
-              <div
-                class="swiper-slide"
-                data-video-id="YoHD9XEInc0"
-                data-title="Inception"
-                data-year="2010"
-                data-genre="Action, Sci-Fi"
-              >
-                <div class="row row-cols-2 row-cols-md-4 g-3">
-                  <!-- 4 card demo; ảnh dùng LOCAL -->
-                  <div class="col">
-                    <div class="card h-100 bg-dark text-light rm-movie-card">
-                      <img
-                        class="card-img-top rm-movie-poster"
-                        src="img/inception.jpg"
-                        alt="Inception"
-                      />
-                      <div class="card-body">
-                        <h3 class="h6 text-truncate mb-1">Inception</h3>
-                        <p class="card-text small text-white-50 mb-2">
-                          2010 • Action, Sci-Fi
-                        </p>
-                        <div class="d-flex gap-2">
-                          <button
-                            class="btn btn-outline-danger btn-sm js-preview"
-                            data-video-id="YoHD9XEInc0"
-                            data-title="Inception"
-                            data-year="2010"
-                            data-genre="Action, Sci-Fi"
-                          >
-                            <i class="bi bi-play-fill me-1"></i>Trailer
-                          </button>
-                          <a
-                            class="btn btn-outline-secondary btn-sm"
-                            href="movies.html"
-                            >Chi tiết</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Thêm 3 card mẫu (đã có sẵn từ bản trước) -->
-                  <div class="col">
-                    <div class="card h-100 bg-dark text-light rm-movie-card">
-                      <img
-                        class="card-img-top rm-movie-poster"
-                        src="img/avatar.jpg"
-                        alt="Avatar"
-                      />
-                      <div class="card-body">
-                        <h3 class="h6 text-truncate mb-1">Avatar</h3>
-                        <p class="card-text small text-white-50 mb-2">
-                          2009 • Adventure, Sci-Fi
-                        </p>
-                        <div class="d-flex gap-2">
-                          <button
-                            class="btn btn-outline-danger btn-sm js-preview"
-                            data-video-id="5PSNL1qE6VY"
-                            data-title="Avatar"
-                            data-year="2009"
-                            data-genre="Adventure, Sci-Fi"
-                          >
-                            Trailer</button
-                          ><a
-                            class="btn btn-outline-secondary btn-sm"
-                            href="movies.html"
-                            >Chi tiết</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card h-100 bg-dark text-light rm-movie-card">
-                      <img
-                        class="card-img-top rm-movie-poster"
-                        src="img/black-panther-wf.jpg"
-                        alt="Wakanda Forever"
-                      />
-                      <div class="card-body">
-                        <h3 class="h6 text-truncate mb-1">Wakanda Forever</h3>
-                        <p class="card-text small text-white-50 mb-2">
-                          2022 • Action, Drama
-                        </p>
-                        <div class="d-flex gap-2">
-                          <button
-                            class="btn btn-outline-danger btn-sm js-preview"
-                            data-video-id="RlOB3UALvrQ"
-                            data-title="Black Panther: Wakanda Forever"
-                            data-year="2022"
-                            data-genre="Action, Drama"
-                          >
-                            Trailer</button
-                          ><a
-                            class="btn btn-outline-secondary btn-sm"
-                            href="movies.html"
-                            >Chi tiết</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card h-100 bg-dark text-light rm-movie-card">
-                      <img
-                        class="card-img-top rm-movie-poster"
-                        src="img/endgame.jpg"
-                        alt="Avengers: Endgame"
-                      />
-                      <div class="card-body">
-                        <h3 class="h6 text-truncate mb-1">Avengers: Endgame</h3>
-                        <p class="card-text small text-white-50 mb-2">
-                          2019 • Action, Sci-Fi
-                        </p>
-                        <div class="d-flex gap-2">
-                          <button
-                            class="btn btn-outline-danger btn-sm js-preview"
-                            data-video-id="TcMBFSGVi1c"
-                            data-title="Avengers: Endgame"
-                            data-year="2019"
-                            data-genre="Action, Sci-Fi"
-                          >
-                            Trailer</button
-                          ><a
-                            class="btn btn-outline-secondary btn-sm"
-                            href="movies.html"
-                            >Chi tiết</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- ========== Slide 2 ========== -->
-              <div
-                class="swiper-slide"
-                data-video-id="EXeTwQWrcwY"
-                data-title="The Dark Knight"
-                data-year="2008"
-                data-genre="Action, Crime"
-              >
-                <div class="row row-cols-2 row-cols-md-4 g-3">
-                  <div class="col">
-                    <div class="card h-100 bg-dark text-light rm-movie-card">
-                      <img
-                        class="card-img-top rm-movie-poster"
-                        src="img/dark-knight.jpg"
-                        alt="The Dark Knight"
-                      />
-                      <div class="card-body">
-                        <h3 class="h6 text-truncate mb-1">The Dark Knight</h3>
-                        <p class="card-text small text-white-50 mb-2">
-                          2008 • Action, Crime
-                        </p>
-                        <div class="d-flex gap-2">
-                          <button
-                            class="btn btn-outline-danger btn-sm js-preview"
-                            data-video-id="EXeTwQWrcwY"
-                            data-title="The Dark Knight"
-                            data-year="2008"
-                            data-genre="Action, Crime"
-                          >
-                            Trailer</button
-                          ><a
-                            class="btn btn-outline-secondary btn-sm"
-                            href="movies.html"
-                            >Chi tiết</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card h-100 bg-dark text-light rm-movie-card">
-                      <img
-                        class="card-img-top rm-movie-poster"
-                        src="img/godfather.jpg"
-                        alt="The Godfather"
-                      />
-                      <div class="card-body">
-                        <h3 class="h6 text-truncate mb-1">The Godfather</h3>
-                        <p class="card-text small text-white-50 mb-2">
-                          1972 • Crime, Drama
-                        </p>
-                        <div class="d-flex gap-2">
-                          <button
-                            class="btn btn-outline-danger btn-sm js-preview"
-                            data-video-id="UaVTIH8mujA"
-                            data-title="The Godfather"
-                            data-year="1972"
-                            data-genre="Crime, Drama"
-                          >
-                            Trailer</button
-                          ><a
-                            class="btn btn-outline-secondary btn-sm"
-                            href="movies.html"
-                            >Chi tiết</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card h-100 bg-dark text-light rm-movie-card">
-                      <img
-                        class="card-img-top rm-movie-poster"
-                        src="img/infinity-war.jpg"
-                        alt="Infinity War"
-                      />
-                      <div class="card-body">
-                        <h3 class="h6 text-truncate mb-1">Infinity War</h3>
-                        <p class="card-text small text-white-50 mb-2">
-                          2018 • Action, Sci-Fi
-                        </p>
-                        <div class="d-flex gap-2">
-                          <button
-                            class="btn btn-outline-danger btn-sm js-preview"
-                            data-video-id="6ZfuNTqbHE8"
-                            data-title="Avengers: Infinity War"
-                            data-year="2018"
-                            data-genre="Action, Sci-Fi"
-                          >
-                            Trailer</button
-                          ><a
-                            class="btn btn-outline-secondary btn-sm"
-                            href="movies.html"
-                            >Chi tiết</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card h-100 bg-dark text-light rm-movie-card">
-                      <img
-                        class="card-img-top rm-movie-poster"
-                        src="img/wonder-woman-1984.jpg"
-                        alt="Wonder Woman 1984"
-                      />
-                      <div class="card-body">
-                        <h3 class="h6 text-truncate mb-1">Wonder Woman 1984</h3>
-                        <p class="card-text small text-white-50 mb-2">
-                          2020 • Action, Fantasy
-                        </p>
-                        <div class="d-flex gap-2">
-                          <button
-                            class="btn btn-outline-danger btn-sm js-preview"
-                            data-video-id="sfM7_JLk-84"
-                            data-title="Wonder Woman 1984"
-                            data-year="2020"
-                            data-genre="Action, Fantasy"
-                          >
-                            Trailer</button
-                          ><a
-                            class="btn btn-outline-secondary btn-sm"
-                            href="movies.html"
-                            >Chi tiết</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- ========== Slide 3 ========== -->
-              <div
-                class="swiper-slide"
-                data-video-id="66TuSJo4dZM"
-                data-title="Interstellar"
-                data-year="2014"
-                data-genre="Adventure, Drama"
-              >
-                <div class="row row-cols-2 row-cols-md-4 g-3">
-                  <div class="col">
-                    <div class="card h-100 bg-dark text-light rm-movie-card">
-                      <img
-                        class="card-img-top rm-movie-poster"
-                        src="img/interstellar.jpg"
-                        alt="Interstellar"
-                      />
-                      <div class="card-body">
-                        <h3 class="h6 text-truncate mb-1">Interstellar</h3>
-                        <p class="card-text small text-white-50 mb-2">
-                          2014 • Adventure, Drama
-                        </p>
-                        <div class="d-flex gap-2">
-                          <button
-                            class="btn btn-outline-danger btn-sm js-preview"
-                            data-video-id="66TuSJo4dZM"
-                            data-title="Interstellar"
-                            data-year="2014"
-                            data-genre="Adventure, Drama"
-                          >
-                            Trailer</button
-                          ><a
-                            class="btn btn-outline-secondary btn-sm"
-                            href="movies.html"
-                            >Chi tiết</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card h-100 bg-dark text-light rm-movie-card">
-                      <img
-                        class="card-img-top rm-movie-poster"
-                        src="img/fight-club.jpg"
-                        alt="Fight Club"
-                      />
-                      <div class="card-body">
-                        <h3 class="h6 text-truncate mb-1">Fight Club</h3>
-                        <p class="card-text small text-white-50 mb-2">
-                          1999 • Drama
-                        </p>
-                        <div class="d-flex gap-2">
-                          <button
-                            class="btn btn-outline-danger btn-sm js-preview"
-                            data-video-id="SUXWAEX2jlg"
-                            data-title="Fight Club"
-                            data-year="1999"
-                            data-genre="Drama"
-                          >
-                            Trailer</button
-                          ><a
-                            class="btn btn-outline-secondary btn-sm"
-                            href="movies.html"
-                            >Chi tiết</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card h-100 bg-dark text-light rm-movie-card">
-                      <img
-                        class="card-img-top rm-movie-poster"
-                        src="img/la-la-land.jpg"
-                        alt="La La Land"
-                      />
-                      <div class="card-body">
-                        <h3 class="h6 text-truncate mb-1">La La Land</h3>
-                        <p class="card-text small text-white-50 mb-2">
-                          2016 • Romance, Drama
-                        </p>
-                        <div class="d-flex gap-2">
-                          <button
-                            class="btn btn-outline-danger btn-sm js-preview"
-                            data-video-id="0pdqf4P9MB8"
-                            data-title="La La Land"
-                            data-year="2016"
-                            data-genre="Romance, Drama"
-                          >
-                            Trailer</button
-                          ><a
-                            class="btn btn-outline-secondary btn-sm"
-                            href="movies.html"
-                            >Chi tiết</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card h-100 bg-dark text-light rm-movie-card">
-                      <img
-                        class="card-img-top rm-movie-poster"
-                        src="img/parasite.jpg"
-                        alt="Parasite"
-                      />
-                      <div class="card-body">
-                        <h3 class="h6 text-truncate mb-1">Parasite</h3>
-                        <p class="card-text small text-white-50 mb-2">
-                          2019 • Thriller, Drama
-                        </p>
-                        <div class="d-flex gap-2">
-                          <button
-                            class="btn btn-outline-danger btn-sm js-preview"
-                            data-video-id="SEUXfv87Wpk"
-                            data-title="Parasite"
-                            data-year="2019"
-                            data-genre="Thriller, Drama"
-                          >
-                            Trailer</button
-                          ><a
-                            class="btn btn-outline-secondary btn-sm"
-                            href="movies.html"
-                            >Chi tiết</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Nút điều hướng cho mobile -->
-            <div class="d-flex d-md-none justify-content-end gap-2 mt-3">
-              <button
-                class="btn btn-outline-secondary btn-sm swiper-prev"
-                aria-label="Prev"
-              >
-                <i class="bi bi-chevron-left"></i>
-              </button>
-              <button
-                class="btn btn-outline-secondary btn-sm swiper-next"
-                aria-label="Next"
-              >
-                <i class="bi bi-chevron-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- =================== 36 PHIM — PHÂN THEO 6 THỂ LOẠI (PHƯƠNG ÁN A) =================== -->
-
-      <!-- 1) Hành động & Viễn tưởng — 16+ -->
-      <section class="py-4 rm-section" id="action-sci-fi">
-        <div class="container">
-          <h2 class="h5 mb-3">
-            Hành động &amp; Viễn tưởng
-            <span class="badge bg-warning text-dark">16+</span>
-          </h2>
-          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
-            <!-- 6 phim -->
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/inception.jpg"
-                  alt="Inception"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Inception</h6>
-                  <p class="small text-white-50 mb-2">2010 • Sci-Fi</p>
-                  <span class="badge bg-warning text-dark">16+</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/avatar.jpg"
-                  alt="Avatar"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Avatar</h6>
-                  <p class="small text-white-50 mb-2">2009 • Sci-Fi</p>
-                  <span class="badge bg-warning text-dark">16+</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/dark-knight.jpg"
-                  alt="The Dark Knight"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">The Dark Knight</h6>
-                  <p class="small text-white-50 mb-2">2008 • Action</p>
-                  <span class="badge bg-warning text-dark">16+</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/endgame.jpg"
-                  alt="Avengers: Endgame"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Avengers: Endgame</h6>
-                  <p class="small text-white-50 mb-2">2019 • Action</p>
-                  <span class="badge bg-warning text-dark">16+</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/interstellar.jpg"
-                  alt="Interstellar"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Interstellar</h6>
-                  <p class="small text-white-50 mb-2">2014 • Sci-Fi</p>
-                  <span class="badge bg-warning text-dark">16+</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/dune.jpg"
-                  alt="Dune"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Dune</h6>
-                  <p class="small text-white-50 mb-2">2021 • Sci-Fi</p>
-                  <span class="badge bg-warning text-dark">16+</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 2) Tội phạm & Giật gân — 18+ -->
-      <section class="py-4 rm-section" id="crime-thriller">
-        <div class="container">
-          <h2 class="h5 mb-3">
-            Tội phạm &amp; Giật gân <span class="badge bg-danger">18+</span>
-          </h2>
-          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/godfather.jpg"
-                  alt="The Godfather"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">The Godfather</h6>
-                  <p class="small text-white-50 mb-2">1972 • Crime</p>
-                  <span class="badge bg-danger">18+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/joker.jpg"
-                  alt="Joker"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Joker</h6>
-                  <p class="small text-white-50 mb-2">2019 • Thriller</p>
-                  <span class="badge bg-danger">18+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/fight-club.jpg"
-                  alt="Fight Club"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Fight Club</h6>
-                  <p class="small text-white-50 mb-2">1999 • Thriller</p>
-                  <span class="badge bg-danger">18+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/john-wick.jpg"
-                  alt="John Wick"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">John Wick</h6>
-                  <p class="small text-white-50 mb-2">2014 • Action</p>
-                  <span class="badge bg-danger">18+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/gone-girl.jpg"
-                  alt="Gone Girl"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Gone Girl</h6>
-                  <p class="small text-white-50 mb-2">2014 • Thriller</p>
-                  <span class="badge bg-danger">18+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/seven.jpg"
-                  alt="Seven"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Seven</h6>
-                  <p class="small text-white-50 mb-2">1995 • Crime</p>
-                  <span class="badge bg-danger">18+</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3) Tình cảm & Hài — 13+ -->
-      <section class="py-4 rm-section" id="romance-comedy">
-        <div class="container">
-          <h2 class="h5 mb-3">
-            Tình cảm &amp; Hài <span class="badge bg-info text-dark">13+</span>
-          </h2>
-          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/la-la-land.jpg"
-                  alt="La La Land"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">La La Land</h6>
-                  <p class="small text-white-50 mb-2">2016 • Romance</p>
-                  <span class="badge bg-info text-dark">13+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/the-intern.jpg"
-                  alt="The Intern"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">The Intern</h6>
-                  <p class="small text-white-50 mb-2">2015 • Comedy</p>
-                  <span class="badge bg-info text-dark">13+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/crazy-rich-asians.jpg"
-                  alt="Crazy Rich Asians"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Crazy Rich Asians</h6>
-                  <p class="small text-white-50 mb-2">2018 • Comedy</p>
-                  <span class="badge bg-info text-dark">13+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/me-before-you.jpg"
-                  alt="Me Before You"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Me Before You</h6>
-                  <p class="small text-white-50 mb-2">2016 • Romance</p>
-                  <span class="badge bg-info text-dark">13+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/500-days-of-summer.jpg"
-                  alt="500 Days of Summer"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">500 Days of Summer</h6>
-                  <p class="small text-white-50 mb-2">2009 • Romance</p>
-                  <span class="badge bg-info text-dark">13+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/the-proposal.jpg"
-                  alt="The Proposal"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">The Proposal</h6>
-                  <p class="small text-white-50 mb-2">2009 • Comedy</p>
-                  <span class="badge bg-info text-dark">13+</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4) Kinh dị & Bí ẩn — 18+ -->
-      <section class="py-4 rm-section" id="horror-mystery">
-        <div class="container">
-          <h2 class="h5 mb-3">
-            Kinh dị &amp; Bí ẩn <span class="badge bg-danger">18+</span>
-          </h2>
-          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/conjuring.jpg"
-                  alt="The Conjuring"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">The Conjuring</h6>
-                  <p class="small text-white-50 mb-2">2013 • Horror</p>
-                  <span class="badge bg-danger">18+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/get-out.jpg"
-                  alt="Get Out"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Get Out</h6>
-                  <p class="small text-white-50 mb-2">2017 • Mystery</p>
-                  <span class="badge bg-danger">18+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/a-quiet-place.jpg"
-                  alt="A Quiet Place"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">A Quiet Place</h6>
-                  <p class="small text-white-50 mb-2">2018 • Horror</p>
-                  <span class="badge bg-danger">18+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/hereditary.jpg"
-                  alt="Hereditary"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Hereditary</h6>
-                  <p class="small text-white-50 mb-2">2018 • Horror</p>
-                  <span class="badge bg-danger">18+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/insidious.jpg"
-                  alt="Insidious"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Insidious</h6>
-                  <p class="small text-white-50 mb-2">2010 • Horror</p>
-                  <span class="badge bg-danger">18+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/shutter-island.jpg"
-                  alt="Shutter Island"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Shutter Island</h6>
-                  <p class="small text-white-50 mb-2">2010 • Mystery</p>
-                  <span class="badge bg-danger">18+</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5) Hoạt hình & Gia đình — P -->
-      <section class="py-4 rm-section" id="animation-family">
-        <div class="container">
-          <h2 class="h5 mb-3">
-            Hoạt hình &amp; Gia đình <span class="badge bg-success">P</span>
-          </h2>
-          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/toy-story-4.jpg"
-                  alt="Toy Story 4"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Toy Story 4</h6>
-                  <p class="small text-white-50 mb-2">2019 • Animation</p>
-                  <span class="badge bg-success">P</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/coco.jpg"
-                  alt="Coco"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Coco</h6>
-                  <p class="small text-white-50 mb-2">2017 • Animation</p>
-                  <span class="badge bg-success">P</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/up.jpg"
-                  alt="Up"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Up</h6>
-                  <p class="small text-white-50 mb-2">2009 • Animation</p>
-                  <span class="badge bg-success">P</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/finding-nemo.jpg"
-                  alt="Finding Nemo"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Finding Nemo</h6>
-                  <p class="small text-white-50 mb-2">2003 • Animation</p>
-                  <span class="badge bg-success">P</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/inside-out.jpg"
-                  alt="Inside Out"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Inside Out</h6>
-                  <p class="small text-white-50 mb-2">2015 • Animation</p>
-                  <span class="badge bg-success">P</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/frozen-2.jpg"
-                  alt="Frozen II"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Frozen II</h6>
-                  <p class="small text-white-50 mb-2">2019 • Animation</p>
-                  <span class="badge bg-success">P</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 6) Chiến tranh & Lịch sử — 16+ -->
-      <section class="py-4 rm-section" id="war-historical">
-        <div class="container">
-          <h2 class="h5 mb-3">
-            Chiến tranh &amp; Lịch sử
-            <span class="badge bg-warning text-dark">16+</span>
-          </h2>
-          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/1917.jpg"
-                  alt="1917"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">1917</h6>
-                  <p class="small text-white-50 mb-2">2019 • War</p>
-                  <span class="badge bg-warning text-dark">16+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/dunkirk.jpg"
-                  alt="Dunkirk"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Dunkirk</h6>
-                  <p class="small text-white-50 mb-2">2017 • War</p>
-                  <span class="badge bg-warning text-dark">16+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/hacksaw-ridge.jpg"
-                  alt="Hacksaw Ridge"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Hacksaw Ridge</h6>
-                  <p class="small text-white-50 mb-2">2016 • War</p>
-                  <span class="badge bg-warning text-dark">16+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/saving-private-ryan.jpg"
-                  alt="Saving Private Ryan"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Saving Private Ryan</h6>
-                  <p class="small text-white-50 mb-2">1998 • War</p>
-                  <span class="badge bg-warning text-dark">16+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/the-pianist.jpg"
-                  alt="The Pianist"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">The Pianist</h6>
-                  <p class="small text-white-50 mb-2">2002 • Historical</p>
-                  <span class="badge bg-warning text-dark">16+</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 bg-dark text-light rm-movie-card">
-                <img
-                  class="card-img-top rm-movie-poster"
-                  src="img/oppenheimer.jpg"
-                  alt="Oppenheimer"
-                />
-                <div class="card-body">
-                  <h6 class="text-truncate mb-1">Oppenheimer</h6>
-                  <p class="small text-white-50 mb-2">2023 • Historical</p>
-                  <span class="badge bg-warning text-dark">16+</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <!-- ===== Movie List ===== -->
+    <main class="kf-section">
+      <div class="container">
+        <div id="movieList" class="kf-grid"></div>
+      </div>
     </main>
 
-    <!-- =================== FOOTER =================== -->
-    <footer class="py-4 mt-5 border-top border-secondary">
+    <!-- ===== Footer ===== -->
+    <footer class="kf-footer">
       <div class="container">
-        <div class="row g-3 align-items-center">
-          <div class="col-md">
-            <p class="mb-0 small text-white-50">
-              © 2025 KhoaFilm · Hỏi đáp · Chính sách · Điều khoản · Liên hệ
-            </p>
-          </div>
-          <div class="col-md-auto">
-            <div class="d-flex gap-2 small">
-              <a class="text-white-50" href="#" aria-label="Telegram"
-                ><i class="bi bi-telegram"></i
-              ></a>
-              <a class="text-white-50" href="#" aria-label="Discord"
-                ><i class="bi bi-discord"></i
-              ></a>
-              <a class="text-white-50" href="#" aria-label="YouTube"
-                ><i class="bi bi-youtube"></i
-              ></a>
-              <a class="text-white-50" href="#" aria-label="Facebook"
-                ><i class="bi bi-facebook"></i
-              ></a>
-              <a class="text-white-50" href="#" aria-label="TikTok"
-                ><i class="bi bi-tiktok"></i
-              ></a>
-              <a class="text-white-50" href="#" aria-label="Instagram"
-                ><i class="bi bi-instagram"></i
-              ></a>
+        <p class="mb-1">
+          © 2025 <strong>KhoaFilm</strong> — Website giới thiệu phim chiếu rạp,
+          thiết kế & phát triển bởi
+          <a href="https://dokhacgiakhoa.vn" target="_blank">Đỗ Khắc Gia Khoa</a
+          >.
+        </p>
+        <p class="mb-0">
+          Nguồn trailer: <span class="text-light">YouTube</span> • Dữ liệu phim:
+          <span class="text-light">movies.json</span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- ===== Modal Trailer ===== -->
+    <div
+      class="modal fade kf-modal"
+      id="trailerModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content border-0">
+          <button
+            type="button"
+            class="btn-close btn-close-white ms-auto me-2 mt-2"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+          <div class="modal-body p-0">
+            <div class="ratio ratio-16x9">
+              <iframe
+                id="trailerFrame"
+                src=""
+                title="Trailer"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
             </div>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
 
-    <!-- =================== JS LIBS (CDN) =================== -->
+    <!-- ===== Scripts ===== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
-
-    <!-- JS điều khiển đồng bộ trailer & carousel -->
-    <script src="js/app.js"></script>
+    <script src="../js/movies.js"></script>
   </body>
 </html>

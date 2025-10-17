@@ -1,0 +1,223 @@
+/* =========================================================
+   KhoaFilm — Stylesheet (Horizontal Card Layout)
+   Version: Final Clean
+========================================================= */
+
+/* ====== Variables & Base ====== */
+:root {
+  --kf-bg: #0f1115;
+  --kf-card: #151923;
+  --kf-soft: #1a2030;
+  --kf-border: #2a3140;
+  --kf-accent: #e83e3e;
+  --kf-text: #e6edf3;
+  --kf-sub: #9aa9bd;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--kf-bg);
+  color: var(--kf-text);
+  font-family: "Segoe UI", "Nunito Sans", sans-serif;
+}
+
+/* ====== Navbar ====== */
+.kf-navbar.navbar {
+  background: rgba(13, 15, 19, 0.9) !important;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--kf-border);
+}
+.kf-navbar .nav-link {
+  color: #b9c6dc !important;
+}
+.kf-navbar .nav-link.active,
+.kf-navbar .navbar-brand {
+  color: #fff !important;
+}
+
+/* ====== Hero Header ====== */
+.kf-hero {
+  background: radial-gradient(
+      1000px 500px at 30% -10%,
+      rgba(232, 62, 62, 0.2),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 400px at 100% 0,
+      rgba(76, 201, 240, 0.12),
+      transparent 60%
+    );
+  border-bottom: 1px solid var(--kf-border);
+  text-align: center;
+}
+.kf-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--kf-border);
+  border-radius: 999px;
+  color: #c7d2e2;
+  background: #0f131b;
+  font-size: 0.85rem;
+}
+
+/* ====== Grid Layout ====== */
+.kf-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 992px) {
+  .kf-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =========================================================
+   CARD NGANG: poster trái - nội dung phải
+========================================================= */
+.movie-card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 1rem;
+  text-align: left;
+  background: linear-gradient(180deg, var(--kf-card), var(--kf-soft));
+  border: 1px solid var(--kf-border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease;
+  padding: 1rem;
+}
+.movie-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  border-color: #3b465c;
+}
+
+/* Poster trái */
+.poster-wrap {
+  flex: 0 0 180px;
+}
+.movie-card .poster {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--kf-border);
+  background: #1c2230;
+}
+
+/* Nội dung phải */
+.movie-card .card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+}
+.movie-card .card-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.movie-card .meta {
+  font-size: 0.9rem;
+  color: var(--kf-sub);
+}
+.movie-card .star {
+  color: #ffd166;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+.movie-card .d-flex {
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+/* ====== Buttons ====== */
+.btn-danger {
+  background: var(--kf-accent);
+  border-color: var(--kf-accent);
+}
+.btn-outline-light {
+  border-color: #3a4456;
+  color: #dbe6ff;
+}
+.btn-outline-light:hover {
+  background: #223047;
+  border-color: #4d5c75;
+  color: #fff;
+}
+
+/* ====== Modal Trailer ====== */
+.kf-modal .modal-content {
+  background: #0d1117;
+  border: 1px solid var(--kf-border);
+}
+.kf-modal .btn-close-white {
+  filter: invert(1);
+}
+
+/* ====== Footer ====== */
+.kf-footer {
+  background: #0c0e12;
+  border-top: 1px solid var(--kf-border);
+  color: #9aa9bd;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.95rem;
+}
+.kf-footer a {
+  color: var(--kf-accent);
+  text-decoration: none;
+}
+.kf-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ====== Helpers ====== */
+.kf-muted {
+  color: var(--kf-sub) !important;
+}
+.kf-border {
+  border-color: var(--kf-border) !important;
+}
+.kf-section {
+  padding-block: 2rem;
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1080px;
+  }
+}
+
+/* =========================================================
+   Responsive chỉnh bố cục mobile
+========================================================= */
+@media (max-width: 768px) {
+  .movie-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .poster-wrap {
+    flex: 0 0 auto;
+  }
+  .movie-card .poster {
+    max-width: 280px;
+    height: auto;
+    aspect-ratio: 2/3;
+    margin-bottom: 0.75rem;
+  }
+  .movie-card .card-body {
+    text-align: center;
+    padding-top: 0.5rem;
+  }
+  .movie-card .d-flex {
+    justify-content: center;
+  }
+}

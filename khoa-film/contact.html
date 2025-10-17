@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Liên hệ — KhoaFilm</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="../css/khoafilm.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg kf-navbar sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="index.html"
+          ><i class="bi bi-film me-1"></i> KhoaFilm</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMain"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./favorites.html">Favorites</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="kf-section">
+      <div class="container">
+        <h2 class="fw-bold mb-4 text-center">Liên hệ với KhoaFilm</h2>
+        <form class="mx-auto" style="max-width: 500px">
+          <div class="mb-3">
+            <label class="form-label">Họ và tên</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Nhập tên của bạn"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="name@example.com"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nội dung</label>
+            <textarea
+              class="form-control"
+              rows="4"
+              placeholder="Lời nhắn của bạn..."
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-danger w-100">
+            Gửi liên hệ
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="kf-footer">
+      <div class="container">
+        © 2025 KhoaFilm — Liên hệ hỗ trợ:
+        <a href="mailto:admin@dokhacgiakhoa.vn">admin@dokhacgiakhoa.vn</a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

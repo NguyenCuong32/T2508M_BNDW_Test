@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KhoaFilm — Bộ tứ báo thủ</title>
+
+    <!-- Bootstrap & Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS chung tái sử dụng -->
+    <link href="../css/khoafilm.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navbar dùng lại -->
+    <nav class="navbar navbar-expand-lg kf-navbar sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="index.html">
+          <i class="bi bi-film me-1"></i> KhoaFilm
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMain"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Movie</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Favorites</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header hero riêng cho trang detail -->
+    <header class="kf-hero py-5">
+      <div class="container">
+        <h1 id="movieTitle" class="display-6 fw-bold mb-2">Bộ tứ báo thủ</h1>
+        <p id="movieMeta" class="mb-3 text-white-50">Đang tải thông tin…</p>
+        <div
+          class="d-flex flex-wrap justify-content-center gap-2"
+          id="genreChips"
+        ></div>
+      </div>
+    </header>
+
+    <!-- Nội dung trang phim -->
+    <main class="kf-section">
+      <div class="container">
+        <!-- Card ngang: poster trái + mô tả phải -->
+        <div class="movie-card mb-4">
+          <div class="poster-wrap">
+            <img id="moviePoster" class="poster" src="" alt="Poster" />
+          </div>
+
+          <div class="card-body">
+            <div>
+              <h5 class="card-title mb-2" id="movieTitleCard">Bộ tứ báo thủ</h5>
+              <p class="meta mb-1" id="movieMetaCard"></p>
+              <p class="meta mb-1" id="movieAge"></p>
+              <p class="star mb-2" id="movieStar">⭐ 0.0/5</p>
+              <p class="mb-0" id="movieDesc">Tóm tắt đang cập nhật…</p>
+            </div>
+
+            <div class="d-flex gap-2 mt-3">
+              <button id="btnTrailer" class="btn btn-outline-light btn-sm">
+                🎬 Trailer
+              </button>
+              <a href="index.html" class="btn btn-danger btn-sm">
+                ⬅️ Về trang chủ
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Khu vực xem nhanh trailer nhúng (tuỳ chọn nếu muốn auto mở) -->
+        <div class="ratio ratio-16x9 d-none" id="inlinePlayerWrap">
+          <iframe
+            id="inlinePlayer"
+            src=""
+            title="Trailer"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer dùng lại -->
+    <footer class="kf-footer">
+      <div class="container">
+        <p class="mb-1">
+          © 2025 <strong>KhoaFilm</strong> — Trang xem phim:
+          <strong>Bộ tứ báo thủ</strong>
+        </p>
+        <p class="mb-0">
+          Trailer: <span class="text-light">YouTube</span> • Dữ liệu:
+          <span class="text-light">movies.json</span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Modal Trailer -->
+    <div
+      class="modal fade kf-modal"
+      id="trailerModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content border-0">
+          <button
+            type="button"
+            class="btn-close btn-close-white ms-auto me-2 mt-2"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+          <div class="modal-body p-0">
+            <div class="ratio ratio-16x9">
+              <iframe
+                id="trailerFrame"
+                src=""
+                title="Trailer"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap + JS trang chi tiết -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Truyền slug cho JS qua data-attr, để tái sử dụng script cho các trang khác -->
+    <script>
+      window.KF_DETAIL_SLUG = "bo-tu-bao-thu";
+    </script>
+    <script src="../js/movie-detail.js"></script>
+  </body>
+</html>
