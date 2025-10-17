@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Khoản</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/all-icon.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="shortcut icon" href="/assets/images/favicon.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <header class="header-luvangioi">
+        <div class="container-luvangioi">
+            <div class="logo-luvangioi" onclick="href('/')">
+                <img src="/assets/images/logo.png" alt="">
+            </div>
+            <div class="search-luvangioi">
+                <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                <span class="icon-search-luvangioi"><i class="fal fa-search"></i></span>
+            </div>
+
+
+            <div class="cart-form-luvangioi cart-form-mobile-luvangioi mobile-luvangioi d-flex align-items-center gap-2 cursor-p"
+                style="width: 100%;">
+                <div class="me-1 cursor-p" onclick="href('/tai-khoan.html')">
+                    <i class="fal fa-user-circle fs-4"></i>
+                </div>
+                <div class="cart-luvangioi" onclick="href('/gio-hang.html')">
+                    <i class="fa-light fa-cart-shopping fs-4"></i>
+                    <span class="amount-cart-luvangioi">0</span>
+                </div>
+            </div>
+
+            <div class="menu-right-luvangioi d-flex align-items-center">
+                <div class="contact-luvangioi" onclick="href('//zalo.me/0333293290')">
+                    <div class="icon-phone-luvangioi">
+                        <i class="fa-light fa-phone-intercom fs-2"></i>
+                    </div>
+                    <div class="info-contact-luvangioi">
+                        <div class="title-contact-luvangioi">Gọi Mua Hàng</div>
+                        <div class="phone-contact-luvangioi">0333.293.290</div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-2 ms-2 cursor-p hover-header-luvangioi"
+                    style="width: 100%;border-right: 1px solid #e5e5e557;padding-right: 10px;margin-right: 10px;height: 30px"
+                    onclick="href('/tin-tuc.html')">
+                    <i class="fal fa-newspaper fs-4"></i>
+                    <span class="title-item-header-luvangioi">Tin Tức</span>
+                </div>
+
+                <div class="d-flex align-items-center gap-2 ms-2 cursor-p hover-header-luvangioi"
+                    style="width: 100%;border-right: 1px solid #e5e5e557;padding-right: 10px;margin-right: 10px;height: 30px"
+                    onclick="href('/gioi-thieu.html')">
+                    <i class="fal fa-memo-circle-info fs-4"></i>
+                    <span class="title-item-header-luvangioi">Giới Thiệu</span>
+                </div>
+
+                <div class="d-flex align-items-center gap-2 ms-2 cursor-p hover-header-luvangioi"
+                    style="width: 100%;border-right: 1px solid #e5e5e557;padding-right: 10px;margin-right: 10px;height: 30px"
+                    onclick="href('/tai-khoan.html')">
+                    <i class="fal fa-user-circle fs-4 active-header-luvangioi"></i>
+                    <span class="title-item-header-luvangioi active-header-luvangioi">Tài Khoản</span>
+                </div>
+
+                <div class="cart-form-luvangioi d-flex align-items-center gap-2 ms-2 cursor-p hover-header-luvangioi"
+                    style="width: 100%;" onclick="href('/gio-hang.html')">
+                    <div class="cart-luvangioi">
+                        <i class="fa-light fa-cart-shopping fs-4"></i>
+                        <span class="amount-cart-luvangioi">0</span>
+                    </div>
+                    <span class="title-item-header-luvangioi">Giỏ Hàng</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-luvangioi p-2">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <img src="/assets/images/user.png" style="width: 70px;" alt="">
+                            <div class="fw-bold mt-1">Lư Văn Giỏi</div>
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-3">
+                            <span>Tài Khoản:</span>
+                            <span><b>lumanhgioi3</b></span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-3">
+                            <span>Email:</span>
+                            <span><b>lumanhgioi.vn@gmail.com</b></span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-3">
+                            <span>Số Điện Thoại:</span>
+                            <span><b>0333293290</b></span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-3">
+                            <span>Địa Chỉ:</span>
+                            <span><b>Trịnh Văn Bô, Q. Nam Từ Liêm, TP. Hà Nội</b></span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span>Thời Gian Tham Gia:</span>
+                            <span><b>17:36 17/10/2025</b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0 fw-bold">ĐỔI MẬT KHẨU</h6>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="POST">
+                            <div class="mb-3">
+                                <label for="">Mật Khẩu Hiện Tại</label>
+                                <input type="password" class="form-control border" name="password1" placeholder="******"
+                                    required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="">Mật Khẩu Mới</label>
+                                <input type="password" class="form-control border" name="password2" placeholder="******"
+                                    required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="">Nhập Lại Mật Khẩu Mới</label>
+                                <input type="password" class="form-control border" name="password3" placeholder="******"
+                                    required>
+                            </div>
+
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-danger">Thay Đổi</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="card mt-3">
+                    <div class="card-header p-3">
+                        <h6 class="mb-0 fw-bold">ĐƠN HÀNG</h6>
+                    </div>
+                    <div class="card-body table-responsive">
+                        <table class="table border">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Mã Đơn</th>
+                                    <th>Sản Phẩm</th>
+                                    <th>Tổng Tiền</th>
+                                    <th>Trạng Thái</th>
+                                    <th>Thông Điệp</th>
+                                    <th>Thời Gian</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><b>#MSF729ANF</b></td>
+                                    <td>Thiết Bị XDJ-RX 1</td>
+                                    <td>32.000.000đ</td>
+                                    <td>
+                                        <span class="badge bg-warning">Đang Vận Chuyển</span>
+                                    </td>
+                                    <td>
+                                        Đã Bàn Giao Cho Đơn Vị Vận Chuyển
+                                    </td>
+                                    <td>17:44 17/10/2025</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><b>#LJG2V1XNA</b></td>
+                                    <td>Thiết Bị XDJ-RX 3</td>
+                                    <td>46.500.000đ</td>
+                                    <td>
+                                        <span class="badge bg-success">Giao Thành Công</span>
+                                    </td>
+                                    <td>
+                                        Giao Hàng Thành Công
+                                    </td>
+                                    <td>17:44 17/10/2025</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-luvangioi">
+        <div class="container-luvangioi">
+            <div class="row pt-3 pb-3 border-bottom mb-3">
+                <div class="col-md-3 col-6">
+                    <div class="d-flex align-items-center gap-2">
+                        <img src="https://antuan.vn/public/uploads/antuanvn/befenit1.png" alt="">
+                        <div>
+                            <div class="fs-6 fw-bold">CHÍNH SÁCH GIAO HÀNG</div>
+                            <div style="font-size: 14px;">Nhận hàng và thanh toán tại nhà</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="d-flex align-items-center gap-2">
+                        <img src="https://antuan.vn/public/uploads/antuanvn/befenit2.png" alt="">
+                        <div>
+                            <div class="fs-6 fw-bold">ĐỔI TRẢ DỄ DÀNG</div>
+                            <div style="font-size: 14px;">1 đổi 1 trong 15 ngày</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="d-flex align-items-center gap-2">
+                        <img src="https://antuan.vn/public/uploads/antuanvn/befenit3.png" alt="">
+                        <div>
+                            <div class="fs-6 fw-bold">THANH TOÁN TIỆN LỢI</div>
+                            <div style="font-size: 14px;">Trả tiền mặt, ck, trả góp 0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="d-flex align-items-center gap-2">
+                        <img src="https://antuan.vn/public/uploads/antuanvn/befenit4.png" alt="">
+                        <div>
+                            <div class="fs-6 fw-bold">HỖ TRỢ NHIỆT TÌNH</div>
+                            <div style="font-size: 14px;">Tư vấn, giải đáp mọi thắc mắc</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="title-footer-luvangioi mb-3">
+                        <div class="fs-5 fw-bold">GIỚI THIỆU</div>
+                        <span class="line-footer"></span>
+                    </div>
+
+                    <div class="mb-2 cursor-p hover-danger-luvangioi">Tin công nghệ</div>
+                    <div class="mb-2 cursor-p hover-danger-luvangioi">Thông tin tuyển dụng</div>
+                    <div class="mb-2 cursor-p hover-danger-luvangioi">Liên hệ hợp tác kinh doanh</div>
+                    <div class="mb-2 cursor-p hover-danger-luvangioi">Giới thiệu công ty</div>
+
+                    <div class="d-flex mt-3 align-items-center">
+                        <span class="icon-btn-luvangioi facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </span>
+
+                        <span class="icon-btn-luvangioi youtube">
+                            <i class="fab fa-youtube"></i>
+                        </span>
+
+                        <span class="icon-btn-luvangioi instagram">
+                            <i class="fab fa-instagram"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="title-footer-luvangioi mb-3">
+                        <div class="fs-5 fw-bold">HỖ TRỢ KHÁCH HÀNG</div>
+                        <span class="line-footer"></span>
+                    </div>
+
+                    <div class="mb-2 cursor-p hover-danger-luvangioi">Chính sách sử lý khiếu lại</div>
+                    <div class="mb-2 cursor-p hover-danger-luvangioi">In hóa đơn điện tử</div>
+                    <div class="mb-2 cursor-p hover-danger-luvangioi">Hướng dẫn mua hàng trả góp</div>
+                    <div class="mb-2 cursor-p hover-danger-luvangioi">Các phương thức thanh toán</div>
+                    <div class="mb-2 cursor-p hover-danger-luvangioi">Chính sách kiểm hàng</div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="title-footer-luvangioi mb-3">
+                        <div class="fs-5 fw-bold">CHÍNH SÁCH CHUNG</div>
+                        <span class="line-footer"></span>
+                    </div>
+
+                    <div class="mb-2 cursor-p hover-danger-luvangioi">Chính sách đổi trả và hoàn tiền</div>
+                    <div class="mb-2 cursor-p hover-danger-luvangioi">Bảo mật thông tin khách hàng</div>
+                    <div class="mb-2 cursor-p hover-danger-luvangioi">Chính sách bảo hành</div>
+                    <div class="mb-2 cursor-p hover-danger-luvangioi">Chính sách vận chuyển & giao nhận</div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="title-footer-luvangioi mb-3">
+                        <div class="fs-5 fw-bold">LIÊN HỆ HỖ TRỢ</div>
+                        <span class="line-footer"></span>
+                    </div>
+
+                    <div class="mb-2 cursor-p hover-danger-luvangioi"><i class="fal fa-location-dot text-danger"></i>
+                        Trịnh Văn Bô, Q. Nam Từ Liêm, TP. Hà Nội</div>
+                    <div class="mb-2 cursor-p hover-danger-luvangioi"><i class="fal fa-clock text-danger"></i> Giờ làm
+                        việc: 8h - 12h</div>
+                    <div class="mb-2 cursor-p hover-danger-luvangioi"><i class="fal fa-phone text-danger"></i>
+                        0333.293.290</div>
+                    <div class="mb-2 cursor-p hover-danger-luvangioi"><i
+                            class="fal fa-map-location-dot text-danger"></i> Xem bản đồ đường đi</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/style.js"></script>
+</body>
+
+</html>
