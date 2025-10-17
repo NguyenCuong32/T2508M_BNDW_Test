@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RopFilm - Menu Phim</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #f5f5f5;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #000;
+      padding: 10px 40px;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    header button {
+      background-color: #f1c40f;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-left: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    header button:hover {
+      background-color: #d4ac0d;
+    }
+
+    .categories {
+      padding: 40px;
+    }
+
+    .category {
+      margin-bottom: 50px;
+    }
+
+    .category h2 {
+      color: #f1c40f;
+      margin-bottom: 20px;
+    }
+
+    .movie-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .movie-card {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 200px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .movie-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(241, 196, 15, 0.3);
+    }
+
+    .movie-card img {
+      width: 100%;
+      display: block;
+    }
+
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 20px 0;
+      color: #999;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .movie-row {
+        justify-content: center;
+      }
+      .movie-card {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .movie-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="final.html"><img src="/images/logo.jpg" alt="RopFilm Logo"></a>
+    </div>
+    <div class="nav">
+      <button onclick="location.href='final.html'">Trang chủ</button>
+      <button onclick="location.href='about.html'">Giới thiệu</button>
+      <button onclick="location.href= 'login.html'">Đăng nhập</button>
+      <button onclick="location.href= 'register.html'">Đăng ký</button>
+    </div>
+  </header>
+
+  <section class="categories">
+    <div class="category">
+      <h2>Phim Hành Động</h2>
+      <div class="movie-row">
+        <div class="movie-card"><img src="./images/mi.jpg" alt="nhiệm vụ bất khả thi"></div>
+        <div class="movie-card"><img src="./images/jw.jpg" alt="john wick 2"></div>
+        <div class="movie-card"><img src="./images/avatar.jpg" alt="avatar 3"></div>
+        <div class="movie-card"><img src="./images/hp.jpg" alt="harry potter 3"></div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>Phim Tình Cảm</h2>
+      <div class="movie-row">
+        <div class="movie-card"><img src="./images/ec18.jpg" alt="em chưa 18"></div>
+        <div class="movie-card"><img src="./images/clvb.jpg" alt="cua lại vợ bầu"></div>
+        <div class="movie-card"><img src="./images/elbnca.jpg" alt="em là bà nội của anh"></div>
+        <div class="movie-card"><img src="./images/ont30.jpg" alt="ông ngoại tuổi 30"></div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>Phim Mới</h2>
+      <div class="movie-row">
+        <div class="movie-card"><img src="./images/tctk.jpg" alt="tử chiến trên không"></div>
+        <div class="movie-card"><img src="./images/md.jpg" alt="mưa đỏ"></div>
+        <div class="movie-card"><img src="./images/cvcn.jpg" alt="cục vàng của ngoại"></div>
+        <div class="movie-card"><img src="./images/nd.jpg" alt="nhân diện"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 RopFilm. Tất cả các quyền được bảo lưu.</p>
+  </footer>
+</body>
+</html>
