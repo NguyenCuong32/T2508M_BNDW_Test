@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giới thiệu - RopFilm</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #f5f5f5;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #000;
+      padding: 10px 40px;
+    }
+    header img {
+      height: 50px;
+    }
+    header button {
+      background-color: #f1c40f;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-left: 10px;
+      font-weight: bold;
+    }
+    header button:hover {
+      background-color: #d4ac0d;
+    }
+    .about-container {
+      padding: 60px 10%;
+      text-align: center;
+    }
+    .about-container h1 {
+      color: #f1c40f;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+    .about-container p {
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: #ddd;
+      margin-bottom: 40px;
+    }
+    .values {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .value-box {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 25px;
+      width: 300px;
+      transition: 0.3s;
+    }
+    .value-box:hover {
+      transform: scale(1.05);
+    }
+    .value-box h3 {
+      color: #f1c40f;
+      margin-bottom: 10px;
+    }
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 20px 0;
+      color: #999;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="final.html"><img src="/images/logo.jpg" alt="RopFilm Logo"></a>
+    </div>
+    <div class="nav">
+      <button onclick="location.href='final.html'">Trang chủ</button>
+      <button onclick="location.href='about.html'">Giới thiệu</button>
+       <button onclick="location.href= 'login.html'">Đăng nhập</button>
+      <button onclick="location.href= 'register.html'">Đăng ký</button>
+    </div>
+  </header>
+
+  <section class="about-container">
+    <h1>Về RopFilm</h1>
+    <p>
+      <strong>RopFilm</strong> là nền tảng xem phim trực tuyến hiện đại, cung cấp hàng nghìn bộ phim chất lượng cao,  
+      từ hành động, tình cảm đến hoạt hình và phim Việt.  
+      Chúng tôi mong muốn mang đến trải nghiệm xem phim mượt mà, tiện lợi và an toàn cho mọi người.
+    </p>
+
+    <div class="values">
+      <div class="value-box">
+        <h3>Tầm Nhìn</h3>
+        <p>Trở thành nền tảng xem phim hàng đầu Việt Nam, nơi mọi người có thể thưởng thức điện ảnh mọi lúc, mọi nơi.</p>
+      </div>
+      <div class="value-box">
+        <h3>Sứ Mệnh</h3>
+        <p>Đem lại trải nghiệm giải trí hiện đại, chất lượng cao và dễ tiếp cận cho mọi người yêu phim ảnh.</p>
+      </div>
+      <div class="value-box">
+        <h3>Giá Trị Cốt Lõi</h3>
+        <p>Chất lượng - Tốc độ - Uy tín. Mỗi bộ phim, mỗi trải nghiệm đều được trau chuốt để mang lại sự hài lòng.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 RopFilm. Tất cả các quyền được bảo lưu.</p>
+  </footer>
+</body>
+</html>
