@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies | NetFilm</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="home.html">🎬 NetFilm</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav me-3">
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link active" href="movies.html">Movies</a></li>
+        <li class="nav-item"><a class="nav-link" href="favourite.html">Favorites</a></li>
+      </ul>
+      <form class="d-flex" role="search">
+        <div class="input-group">
+          <input type="search" class="form-control rounded-pill" placeholder="Search movies..." aria-label="Search">
+          <span class="position-absolute end-0 top-50 translate-middle-y me-3 text-muted">
+            <i class="bi bi-search"></i>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container-fluid mt-4">
+  <div class="row">
+
+    <!-- Sidebar -->
+    <div class="col-md-3 col-lg-2 bg-light p-3 rounded shadow-sm">
+      <h5 class="mb-3">🎭 Genres</h5>
+      <form id="genreForm">
+        <div class="form-check"><input class="form-check-input" type="checkbox" value="Action" id="genreAction"><label class="form-check-label" for="genreAction">Action</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" value="Adventure" id="genreAdventure"><label class="form-check-label" for="genreAdventure">Adventure</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" value="Romance" id="genreRomance"><label class="form-check-label" for="genreRomance">Romance</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" value="Documentary" id="genreDocumentary"><label class="form-check-label" for="genreDocumentary">Documentary</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" value="War" id="genreWar"><label class="form-check-label" for="genreWar">War</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" value="Sport" id="genreSport"><label class="form-check-label" for="genreSport">Sport</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" value="Musical" id="genreMusical"><label class="form-check-label" for="genreMusical">Musical</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" value="Family" id="genreFamily"><label class="form-check-label" for="genreFamily">Family</label></div>
+      </form>
+    </div>
+
+    <!-- Movies Grid -->
+    <div class="col-md-9 col-lg-10">
+      <div class="container">
+        <h3 class="fw-bold mb-4 text-center">🎞️ Movie Collection</h3>
+        <div id="movieGrid" class="row g-4"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-light text-center py-3 mt-5">
+  <div class="container">
+    <small>© 2025 NetFilm. All rights reserved.</small>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Movie Loader -->
+<script src="src/movies.js"></script>
+
+</body>
+</html>
